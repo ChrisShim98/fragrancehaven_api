@@ -256,6 +256,9 @@ namespace api.Data.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("AmountSold")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("AppUserId")
                         .HasColumnType("INTEGER");
 

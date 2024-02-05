@@ -2,6 +2,8 @@ using api.Data;
 using api.Entity;
 using api.Extensions;
 using API.Middleware;
+using fragrancehaven_api.Data;
+using fragrancehaven_api.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,7 +33,9 @@ try
     await context.Database.MigrateAsync();
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
+    var _context = services.GetRequiredService<DataContext>();
     await SeedData.SeedUsers(userManager, roleManager);
+    await SeedData.SeedProducts(_context);
 }
 catch (Exception ex)
 {

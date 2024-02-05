@@ -46,6 +46,8 @@ namespace fragrancehaven_api.Controllers
 
             // Check if product already exists
             var product = _mapper.Map<Product>(productDTO);
+            product.Brand.Name = productDTO.BrandName;
+
             if (await _uow.productRepository.CheckIfProductExists(product))
                 return BadRequest("Product already exists");
 
@@ -99,19 +101,19 @@ namespace fragrancehaven_api.Controllers
             if (product == null)
                 return NotFound("Product does not exist");
 
-            // Check if brand exists, add if it doesn't
-            if (await _uow.brandRepository.CheckIfBrandExists(productDTO.Brand.Name))
-            {
-                productDTO.Brand = await _uow.brandRepository.GetBrandByName(productDTO.Brand.Name);
-            } else {
-                await _uow.brandRepository.AddBrand(productDTO.Brand);
-                await _uow.Complete(); 
-            } 
-
             // Set foreign keys on updated product
             var updatedProduct = _mapper.Map<Product>(productDTO);
             updatedProduct.Id = id;
-            updatedProduct.BrandId = productDTO.Brand.Id;
+            updatedProduct.Brand.Name = productDTO.BrandName;
+
+            // Check if brand exists, add if it doesn't
+            if (await _uow.brandRepository.CheckIfBrandExists(updatedProduct.Brand.Name))
+            {
+                updatedProduct.Brand = await _uow.brandRepository.GetBrandByName(updatedProduct.Brand.Name);
+            } else {
+                await _uow.brandRepository.AddBrand(updatedProduct.Brand);
+                await _uow.Complete(); 
+            }          
 
             // Update Product
             _uow.productRepository.EditProduct(product, updatedProduct);

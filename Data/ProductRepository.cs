@@ -44,7 +44,7 @@ namespace fragrancehaven_api.Data
 
         public async Task<Product> FindProductById(int productId)
         {
-            return await _context.Products.SingleOrDefaultAsync(p => p.Id == productId);
+            return await _context.Products.Include(p => p.Photos).SingleOrDefaultAsync(p => p.Id == productId);
         }
 
         public async Task<PagedList<Product>> GetAllProductsAsync(PaginationParams paginationParams)

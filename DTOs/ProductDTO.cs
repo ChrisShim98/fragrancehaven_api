@@ -8,7 +8,7 @@ namespace fragrancehaven_api.DTOs
         public string Scent { get; set; }
 
         public int BrandId { get; set; }
-        public Brand Brand { get; set; }
+        public string BrandName { get; set; }
         public float Price { get; set; }
         public int Stock { get; set; }
         public string Description { get; set; }

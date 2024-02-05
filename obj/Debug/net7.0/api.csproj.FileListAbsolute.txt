@@ -427,3 +427,4 @@ C:\Users\Chris\Desktop\fragrancehaven_api\bin\Debug\net7.0\Tests\bin\Debug\net7.
 C:\Users\Chris\Desktop\fragrancehaven_api\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\obj\project.assets.json
 C:\Users\Chris\Desktop\fragrancehaven_api\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\bin\Debug\net7.0\Tests\obj\Tests.csproj.nuget.dgspec.json
 C:\Users\Chris\Desktop\fragrancehaven_api\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\Users\Chris\Desktop\fragrancehaven_api\bin\Debug\net7.0\Data\ProductSeedData.json

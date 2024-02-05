@@ -14,6 +14,13 @@ namespace api.Data.Migrations
                 name: "Img",
                 table: "Products");
 
+            migrationBuilder.AddColumn<int>(
+                name: "AmountSold",
+                table: "Products",
+                type: "INTEGER",
+                nullable: false,
+                defaultValue: 0);
+
             migrationBuilder.CreateTable(
                 name: "Photos",
                 columns: table => new
@@ -47,6 +54,10 @@ namespace api.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Photos");
+
+            migrationBuilder.DropColumn(
+                name: "AmountSold",
+                table: "Products");
 
             migrationBuilder.AddColumn<string>(
                 name: "Img",

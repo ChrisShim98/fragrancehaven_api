@@ -1,5 +1,7 @@
 using System.Text.Json;
 using api.Entity;
+using fragrancehaven_api.Entity;
+using fragrancehaven_api.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -43,6 +45,20 @@ namespace api.Data
 
             await userManager.CreateAsync(admin, "Pa$$w0rd");
             await userManager.AddToRolesAsync(admin, new[] {"Admin"});
+        }
+        public static async Task SeedProducts(DataContext _dataContext)
+        {
+            //if (await userManager.Users.AnyAsync()) return;
+
+            var productData = await File.ReadAllTextAsync("data/ProductSeedData.json");
+
+            var products = JsonSerializer.Deserialize<List<Product>>(productData);
+
+            foreach (var product in products)
+            {
+                _dataContext.Products.AddRange(product);
+                _dataContext.SaveChanges();
+            };
         }
     }
 }

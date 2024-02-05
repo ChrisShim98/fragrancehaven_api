@@ -11,7 +11,7 @@ using api.Data;
 namespace api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240204190109_PhotoServiceAdded")]
+    [Migration("20240205224522_PhotoServiceAdded")]
     partial class PhotoServiceAdded
     {
         /// <inheritdoc />
@@ -257,6 +257,9 @@ namespace api.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Amount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AmountSold")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("AppUserId")
