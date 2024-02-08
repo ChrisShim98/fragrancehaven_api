@@ -34,9 +34,12 @@ namespace fragrancehaven_api.Data
 
         public void EditProduct(Product product, Product updatedProduct)
         {
-             foreach (var property in typeof(Product).GetProperties())
+            if (updatedProduct != null)
             {
-                property.SetValue(product, property.GetValue(updatedProduct));
+                foreach (var property in typeof(Product).GetProperties())
+                {
+                    property.SetValue(product, property.GetValue(updatedProduct));
+                }
             }
 
             _context.Products.Update(product);
@@ -44,22 +47,23 @@ namespace fragrancehaven_api.Data
 
         public async Task<Product> FindProductById(int productId)
         {
-            return await _context.Products.Include(p => p.Photos).SingleOrDefaultAsync(p => p.Id == productId);
+            return await _context.Products.Include(p => p.Brand).Include(p => p.Photos).SingleOrDefaultAsync(p => p.Id == productId);
         }
 
         public async Task<PagedList<Product>> GetAllProductsAsync(PaginationParams paginationParams)
         {
             var query = _context.Products.AsQueryable();
 
-            if (paginationParams.SearchQuery != "") {
+            if (paginationParams.SearchQuery != "")
+            {
                 query = query.Where(p => p.Name.ToLower().Contains(paginationParams.SearchQuery));
             }
 
-            query = query.OrderBy(u => u.Id).Include(p => p.Brand).Include(p => p.Photos);          
+            query = query.OrderBy(u => u.Id).Include(p => p.Brand).Include(p => p.Photos);
 
             return await PagedList<Product>.CreateAsync(
                 query.AsNoTracking(),
-                paginationParams.PageNumber, 
+                paginationParams.PageNumber,
                 paginationParams.PageSize);
         }
     }

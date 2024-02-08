@@ -29,7 +29,7 @@ namespace api.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Url = table.Column<string>(type: "TEXT", nullable: true),
                     PublicId = table.Column<string>(type: "TEXT", nullable: true),
-                    isMain = table.Column<bool>(type: "INTEGER", nullable: false),
+                    IsMain = table.Column<bool>(type: "INTEGER", nullable: false),
                     ProductId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

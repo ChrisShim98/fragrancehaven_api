@@ -1,7 +1,6 @@
 using System.Text.Json;
 using api.Entity;
 using fragrancehaven_api.Entity;
-using fragrancehaven_api.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -48,7 +47,7 @@ namespace api.Data
         }
         public static async Task SeedProducts(DataContext _dataContext)
         {
-            //if (await userManager.Users.AnyAsync()) return;
+            if (_dataContext.Products.Any()) return;
 
             var productData = await File.ReadAllTextAsync("data/ProductSeedData.json");
 

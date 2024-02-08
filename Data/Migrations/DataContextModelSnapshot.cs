@@ -228,6 +228,9 @@ namespace api.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("INTEGER");
 
@@ -236,9 +239,6 @@ namespace api.Data.Migrations
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("isMain")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

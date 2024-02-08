@@ -23,14 +23,14 @@ namespace fragrancehaven_api.Controllers
         }
 
         [HttpGet] // GET: api/product/ or /api/product?SearchQuery=TEST
-        public async Task<ActionResult<PagedList<Product>>> GetProducts([FromQuery]PaginationParams paginationParams)
+        public async Task<ActionResult<PagedList<Product>>> GetProducts([FromQuery] PaginationParams paginationParams)
         {
             paginationParams.SearchQuery = paginationParams.SearchQuery.ToLower();
             var products = await _uow.productRepository.GetAllProductsAsync(paginationParams);
 
-            Response.AddPaginationHeader(new PaginationHeader(products.CurrentPage, 
+            Response.AddPaginationHeader(new PaginationHeader(products.CurrentPage,
                 products.PageSize, products.TotalCount, products.TotalPages));
-                
+
             return Ok(products);
         }
 
@@ -42,7 +42,7 @@ namespace fragrancehaven_api.Controllers
             {
                 if (property.GetValue(productDTO) == null)
                     return BadRequest($"{property.Name} is missing");
-            }          
+            }
 
             // Check if product already exists
             var product = _mapper.Map<Product>(productDTO);
@@ -54,17 +54,21 @@ namespace fragrancehaven_api.Controllers
             // Check if brand exists, add if it doesn't
             if (await _uow.brandRepository.CheckIfBrandExists(product.Brand.Name))
             {
-                product.Brand = await _uow.brandRepository.GetBrandByName(product.Brand.Name);
-            } else {
+                Brand foundBrand = await _uow.brandRepository.GetBrandByName(product.Brand.Name);
+                product.BrandId = foundBrand.Id;
+                product.Brand = foundBrand;
+            }
+            else
+            {
                 await _uow.brandRepository.AddBrand(product.Brand);
-                await _uow.Complete(); 
-            }      
+                await _uow.Complete();
+            }
 
             // Add product
             _uow.productRepository.AddProduct(product);
 
             if (await _uow.Complete())
-                return Ok("Product saved");
+                return Ok("Product saved. Id: " + product.Id);
 
             return BadRequest("Failed to save product");
         }
@@ -87,14 +91,14 @@ namespace fragrancehaven_api.Controllers
         }
 
         [HttpPut("{id}")] // PUT: api/product/{id}
-        public async Task<ActionResult<string>> EditProduct(int id, [FromBody]ProductDTO productDTO)
+        public async Task<ActionResult<string>> EditProduct(int id, [FromBody] ProductDTO productDTO)
         {
             // Check if a field is missing
             foreach (var property in typeof(ProductDTO).GetProperties())
             {
                 if (property.GetValue(productDTO) == null)
                     return BadRequest($"{property.Name} is missing");
-            }  
+            }
 
             // Check if product exists
             Product product = await _uow.productRepository.FindProductById(id);
@@ -105,15 +109,26 @@ namespace fragrancehaven_api.Controllers
             var updatedProduct = _mapper.Map<Product>(productDTO);
             updatedProduct.Id = id;
             updatedProduct.Brand.Name = productDTO.BrandName;
+            updatedProduct.Photos = product.Photos;
+
+            if (product.Name != productDTO.Name)
+            {
+                if (await _uow.productRepository.CheckIfProductExists(updatedProduct))
+                    return BadRequest("Product already exists");
+            }
 
             // Check if brand exists, add if it doesn't
             if (await _uow.brandRepository.CheckIfBrandExists(updatedProduct.Brand.Name))
             {
-                updatedProduct.Brand = await _uow.brandRepository.GetBrandByName(updatedProduct.Brand.Name);
-            } else {
+                Brand foundBrand = await _uow.brandRepository.GetBrandByName(updatedProduct.Brand.Name);
+                updatedProduct.BrandId = foundBrand.Id;
+                updatedProduct.Brand = foundBrand;
+            }
+            else
+            {
                 await _uow.brandRepository.AddBrand(updatedProduct.Brand);
-                await _uow.Complete(); 
-            }          
+                await _uow.Complete();
+            }
 
             // Update Product
             _uow.productRepository.EditProduct(product, updatedProduct);
@@ -140,7 +155,7 @@ namespace fragrancehaven_api.Controllers
             };
 
             if (product.Photos.Count == 0)
-                photo.isMain = true;
+                photo.IsMain = true;
 
             product.Photos.Add(photo);
 
@@ -157,12 +172,23 @@ namespace fragrancehaven_api.Controllers
         {
             // Find product then image
             Product product = await _uow.productRepository.FindProductById(id);
-            var photo = product.Photos.FirstOrDefault(p => p.Id == photoId);
+            if (product == null)
+                return NotFound("Product not found");
 
-            if (photo == null) 
+            Photo photo = new();
+            if (product.Photos.Count - 1 >= photoId)
+            {
+                photo = product.Photos[photoId];
+            }
+            else
+            {
+                return NotFound("Image not found");
+            }
+
+            if (photo == null)
                 return NotFound("Image not found");
 
-            if (photo.isMain) 
+            if (photo.IsMain)
                 return BadRequest("You cannot delete product main photo");
 
             if (photo.PublicId != null)
@@ -173,10 +199,49 @@ namespace fragrancehaven_api.Controllers
 
             product.Photos.Remove(photo);
 
-            if (await _uow.Complete()) 
+            if (await _uow.Complete())
                 return Ok("Image deleted");
 
             return BadRequest("Problem deleting photo");
+        }
+
+        [HttpPut("{id}/mainPhoto/{photoId}")] // PUT: api/product/{id}/mainPhoto/{photoId}
+        public async Task<ActionResult<string>> SetMainPhoto(int id, int photoId)
+        {
+            // Find product then image
+            Product product = await _uow.productRepository.FindProductById(id);
+            if (product == null)
+                return NotFound("Product not found");
+
+            Photo photo = new();
+            if (product.Photos.Count - 1 >= photoId)
+            {
+                photo = product.Photos[photoId];
+            }
+            else
+            {
+                return NotFound("Image not found");
+            }
+
+            if (photo == null)
+                return NotFound("Image not found");
+
+            // Set all photo IsMain to false
+            foreach (Photo currentPhoto in product.Photos)
+            {
+                currentPhoto.IsMain = false;
+            }
+
+            // Set the new photo as the main photo
+            product.Photos[photoId].IsMain = true;
+
+            // Update Product
+            _uow.productRepository.EditProduct(product, null);
+
+            if (await _uow.Complete())
+                return Ok("Main photo set");
+
+            return BadRequest("Problem setting main photo");
         }
     }
 }
