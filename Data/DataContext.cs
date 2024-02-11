@@ -21,7 +21,8 @@ namespace api.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder) {
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
             base.OnModelCreating(builder);
 
             builder.Entity<AppUser>()
@@ -29,7 +30,7 @@ namespace api.Data
                 .WithOne(u => u.User)
                 .HasForeignKey(ur => ur.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .IsRequired();                
+                .IsRequired();
 
             builder.Entity<AppRole>()
                 .HasMany(ur => ur.UserRoles)
@@ -48,10 +49,6 @@ namespace api.Data
                 .WithOne(r => r.Product)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<Review>()
-                .HasOne(r => r.Reviewer)
-                .WithMany(r => r.Reviews);
-
             builder.Entity<Transaction>()
                 .HasOne(u => u.User)
                 .WithMany(u => u.Transactions);
@@ -60,7 +57,17 @@ namespace api.Data
                 .HasOne(ph => ph.Product)
                 .WithMany(p => p.Photos)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Review>()
+                .HasOne(r => r.Reviewer)
+                .WithMany(r => r.Reviews)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Review>()
+                .HasOne(r => r.Product)
+                .WithMany(p => p.Reviews)
+                .OnDelete(DeleteBehavior.Cascade);
         }
-        
+
     }
 }

@@ -14,6 +14,7 @@ namespace api.Helpers
             CreateMap<AppUser, AppUserDTO>();
             CreateMap<ProductDTO, Product>();
             CreateMap<PhotoDTO, Photo>();
+            CreateMap<ReviewDTO, Review>();
         }
     }
 }

@@ -1,7 +1,6 @@
 using api.Data;
 using api.Helpers;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using fragrancehaven_api.Entity;
 using fragrancehaven_api.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -47,7 +46,7 @@ namespace fragrancehaven_api.Data
 
         public async Task<Product> FindProductById(int productId)
         {
-            return await _context.Products.Include(p => p.Brand).Include(p => p.Photos).SingleOrDefaultAsync(p => p.Id == productId);
+            return await _context.Products.Include(p => p.Brand).Include(p => p.Photos).Include(p => p.Reviews).SingleOrDefaultAsync(p => p.Id == productId);
         }
 
         public async Task<PagedList<Product>> GetAllProductsAsync(PaginationParams paginationParams)
@@ -59,7 +58,7 @@ namespace fragrancehaven_api.Data
                 query = query.Where(p => p.Name.ToLower().Contains(paginationParams.SearchQuery));
             }
 
-            query = query.OrderBy(u => u.Id).Include(p => p.Brand).Include(p => p.Photos);
+            query = query.OrderBy(u => u.Id).Include(p => p.Brand).Include(p => p.Photos).Include(p => p.Reviews);
 
             return await PagedList<Product>.CreateAsync(
                 query.AsNoTracking(),

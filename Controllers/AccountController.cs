@@ -2,8 +2,12 @@ using api.DTOs;
 using api.Entity;
 using api.Interfaces;
 using AutoMapper;
+using fragrancehaven_api.DTOs;
+using fragrancehaven_api.Entity;
+using fragrancehaven_api.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Controllers
 {
@@ -11,23 +15,25 @@ namespace api.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
+        private readonly IUnitOfWork _uow;
         private readonly ITokenService _tokenService;
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, IMapper mapper)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, IMapper mapper, IUnitOfWork uow)
         {
             _tokenService = tokenService;
             _mapper = mapper;
             _userManager = userManager;
+            _uow = uow;
         }
 
         [HttpPost("register")] // POST: api/account/register
         public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
         {
             if (await UserExists(registerDTO.Username))
-            return BadRequest("Username is taken!");
+                return BadRequest("Username is taken!");
 
             if (await EmailExists(registerDTO.Username))
-            return BadRequest("Email is taken!");
-            
+                return BadRequest("Email is taken!");
+
             var user = _mapper.Map<AppUser>(registerDTO);
 
             user.UserName = registerDTO.Username.ToLower();
@@ -44,6 +50,7 @@ namespace api.Controllers
             return new UserDTO
             {
                 Username = user.UserName,
+                Email = user.Email,
                 Token = await _tokenService.CreateToken(user),
             };
         }
@@ -72,8 +79,117 @@ namespace api.Controllers
             return new UserDTO
             {
                 Username = user.UserName,
+                Email = user.Email,
                 Token = await _tokenService.CreateToken(user),
             };
+        }
+
+        [HttpPost("updatePassword")] // POST: api/account/updatePassword
+        public async Task<ActionResult<UserDTO>> UpdatePassword(PasswordResetDTO passwordResetDTO)
+        {
+            var user = await Task.FromResult(_userManager.Users
+                .SingleOrDefault(x => x.UserName == passwordResetDTO.Username.ToLower()));
+
+            if (user == null) return Unauthorized("Invalid Username");
+
+            if (passwordResetDTO.NewPassword != passwordResetDTO.ConfirmPassword)
+                return Unauthorized("Confirm password should match new password");
+
+            if (passwordResetDTO.CurrentPassword == passwordResetDTO.NewPassword)
+                return Unauthorized("New password and current password should not be the same");
+
+            var result = await _userManager.CheckPasswordAsync(user, passwordResetDTO.CurrentPassword);
+
+            if (!result) return Unauthorized("Invalid Password");
+
+            var changePasswordResult = await _userManager.ChangePasswordAsync(user, passwordResetDTO.CurrentPassword, passwordResetDTO.NewPassword);
+
+            if (!changePasswordResult.Succeeded)
+                return BadRequest("Problem updating password");
+
+            return new UserDTO
+            {
+                Username = user.UserName,
+                Email = user.Email,
+                Token = await _tokenService.CreateToken(user),
+            };
+        }
+
+        [HttpGet("cart")] // GET: api/account/cart
+        public async Task<ActionResult<List<Product>>> GetCart([FromQuery] string username)
+        {
+            AppUser user = await _userManager.Users.Include(u => u.Cart).ThenInclude(c => c.Photos).SingleOrDefaultAsync(u => u.UserName == username);
+            if (user == null)
+                return NotFound("User not found");
+
+            return Ok(user.Cart);
+        }
+
+        [HttpDelete("cart")] // POST: api/account/cart
+        public async Task<ActionResult<List<Product>>> EmptyCart([FromQuery] string username)
+        {
+            AppUser user = await _userManager.Users
+                .Include(u => u.Cart)
+                .SingleOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+                return NotFound("User not found");
+
+            // Clear the existing cart
+            user.Cart.Clear();
+
+            // Save changes to the database
+            await _uow.Complete();
+
+            return Ok(user.Cart);
+        }
+
+        [HttpPut("cart/{id}")] // PUT: api/account/cart/{id}
+        public async Task<ActionResult<List<Product>>> ModifyProductInCart(int id, [FromQuery] string username, bool addProduct)
+        {
+            AppUser user = await _userManager.Users
+                .Include(u => u.Cart)
+                .ThenInclude(p => p.Photos)
+                .SingleOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+                return NotFound("User not found");
+
+            if (addProduct)
+            {
+                Product productToAdd = user.Cart.FirstOrDefault(p => p.Id == id);
+
+                if (productToAdd == null)
+                {
+                    productToAdd = await _uow.productRepository.FindProductById(id);
+                    user.Cart.Add(productToAdd);
+                }
+                else
+                {
+                    productToAdd.Amount += 1;
+                }
+            }
+            else
+            {
+                Product productToRemove = user.Cart.FirstOrDefault(p => p.Id == id);
+
+                if (productToRemove == null)
+                    return NotFound("Product not found");
+
+                if (productToRemove.Amount == 1)
+                {
+                    user.Cart.Remove(productToRemove);
+                }
+                else
+                {
+                    productToRemove.Amount -= 1;
+                }
+            }
+
+            // Save changes to the database
+            await _uow.Complete();
+
+            return Ok(user.Cart);
         }
     }
 }

@@ -1,12 +1,14 @@
 using api.Controllers;
+using api.Entity;
 using api.Extensions;
 using api.Helpers;
 using AutoMapper;
 using fragrancehaven_api.DTOs;
 using fragrancehaven_api.Entity;
 using fragrancehaven_api.Interfaces;
-using fragrancehaven_api.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace fragrancehaven_api.Controllers
 {
@@ -15,11 +17,13 @@ namespace fragrancehaven_api.Controllers
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _uow;
         private readonly IPhotoService _photoService;
-        public ProductController(IMapper mapper, IUnitOfWork uow, IPhotoService photoService)
+        private readonly UserManager<AppUser> _userManager;
+        public ProductController(IMapper mapper, IUnitOfWork uow, IPhotoService photoService, UserManager<AppUser> userManager)
         {
             _mapper = mapper;
             _uow = uow;
             _photoService = photoService;
+            _userManager = userManager;
         }
 
         [HttpGet] // GET: api/product/ or /api/product?SearchQuery=TEST
@@ -160,9 +164,7 @@ namespace fragrancehaven_api.Controllers
             product.Photos.Add(photo);
 
             if (await _uow.Complete())
-            {
                 return Ok("Photo Uploaded");
-            };
 
             return BadRequest("Problem adding photo");
         }
@@ -242,6 +244,37 @@ namespace fragrancehaven_api.Controllers
                 return Ok("Main photo set");
 
             return BadRequest("Problem setting main photo");
+        }
+
+        [HttpPost("{id}/addReview")] // POST: api/product/{id}/addReview
+        public async Task<ActionResult<string>> AddReview(int id, [FromBody] ReviewDTO review)
+        {
+            // Find product then add review
+            Product product = await _uow.productRepository.FindProductById(id);
+            if (product == null)
+                return NotFound("Product not found");
+
+            AppUser user = await _userManager.Users.SingleOrDefaultAsync(u => u.UserName == review.ReviewerName);
+            if (user == null)
+                return NotFound("User not found");
+
+            Review productReview = new Review
+            {
+                Message = review.Message,
+                Rating = review.Rating,
+                ReviewerId = user.Id,
+                ReviewerName = review.ReviewerName,
+                Reviewer = user,
+                ProductId = product.Id,
+                Product = product
+            };
+
+            product.Reviews.Add(productReview);
+
+            if (await _uow.Complete())
+                return Ok("Review Added");
+
+            return BadRequest("Problem adding review");
         }
     }
 }
