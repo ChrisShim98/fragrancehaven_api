@@ -4,7 +4,7 @@ namespace api.Helpers
     {
         private const int MaxPageSize = 50;
         public string SearchQuery { get; set; } = "";
-        public string OrderBy { get; set; } = "Id";
+        public string OrderBy { get; set; } = "";
         public int PageNumber { get; set; } = 1;
         private int _pageSize = 10;
         public int PageSize

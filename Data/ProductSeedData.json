@@ -5,17 +5,190 @@
         "Brand": {
             "Name": "YVES SAINT LAURENT"
         },
-        "Price": 59.00,
+        "Price": 87.99,
         "Stock": 5,
         "Description": "Yves Saint Laurent Y for Men Eau De Parfum Spray 3.3 Fl Ounce (Pack of 1), Clean",
         "Photos": [
             {
                 "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706578499/FragranceHaven/Dev/ugoyiunxawjypsfq1fbn.jpg",
                 "PublicId": "FragranceHaven/Dev/ugoyiunxawjypsfq1fbn",
+                "IsMain": false
+            },
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706578499/FragranceHaven/Dev/bzhut88pr5qbkutkypwi.jpg",
+                "PublicId": "FragranceHaven/Dev/bzhut88pr5qbkutkypwi",
+                "IsMain": false
+            },
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706578499/FragranceHaven/Dev/wxlgmnwut9case4byrwc.jpg",
+                "PublicId": "FragranceHaven/Dev/wxlgmnwut9case4byrwc",
                 "IsMain": true
             }
         ],
-        "Amount": 1
+        "Reviews": [
+            {
+                "Message": "This perfume smells amazing!",
+                "Rating": 5,
+                "ReviewerName": "james901",
+                "ProductId": 1,
+                "ReviewerId": 6,
+                "DateAdded": "2023-08-15T10:30:45.123456"
+            },
+            {
+                "Message": "Not what I expected. Disappointed.",
+                "Rating": 2,
+                "ReviewerName": "sarah678",
+                "ProductId": 1,
+                "ReviewerId": 5,
+                "DateAdded": "2022-06-20T15:45:32.987654"
+            },
+            {
+                "Message": "Absolutely love it! Would buy again.",
+                "Rating": 5,
+                "ReviewerName": "jennifer8901",
+                "ProductId": 1,
+                "ReviewerId": 18,
+                "DateAdded": "2021-11-03T08:20:15.246813"
+            },
+            {
+                "Message": "Meh. It's okay, but nothing special.",
+                "Rating": 3,
+                "ReviewerName": "megan5678",
+                "ProductId": 1,
+                "ReviewerId": 19,
+                "DateAdded": "2023-04-29T13:55:27.135792"
+            },
+            {
+                "Message": "Smells terrible. Would not recommend.",
+                "Rating": 1,
+                "ReviewerName": "daniel567",
+                "ProductId": 1,
+                "ReviewerId": 8,
+                "DateAdded": "2020-09-07T11:10:37.579314"
+            },
+            {
+                "Message": "So-so. Expected more for the price.",
+                "Rating": 3,
+                "ReviewerName": "jessica890",
+                "ProductId": 1,
+                "ReviewerId": 9,
+                "DateAdded": "2023-02-18T17:20:49.468135"
+            },
+            {
+                "Message": "Love the scent! Lasts all day.",
+                "Rating": 4,
+                "ReviewerName": "ashley0123",
+                "ProductId": 1,
+                "ReviewerId": 15,
+                "DateAdded": "2022-07-22T09:40:53.624789"
+            },
+            {
+                "Message": "It's okay, but not my favorite.",
+                "Rating": 3,
+                "ReviewerName": "william1234",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2020-12-10T14:15:23.895241"
+            },
+            {
+                "Message": "Best perfume I've ever used!",
+                "Rating": 5,
+                "ReviewerName": "michael789",
+                "ProductId": 1,
+                "ReviewerId": 2,
+                "DateAdded": "2023-10-05T16:30:40.731986"
+            },
+            {
+                "Message": "Not bad, not great. Just average.",
+                "Rating": 3,
+                "ReviewerName": "laura5678",
+                "ProductId": 1,
+                "ReviewerId": 12,
+                "DateAdded": "2021-03-14T07:25:10.587342"
+            },
+            {
+                "Message": "The scent is overpowering. Gave me a headache.",
+                "Rating": 1,
+                "ReviewerName": "nicole1234",
+                "ProductId": 1,
+                "ReviewerId": 24,
+                "DateAdded": "2019-08-29T12:50:59.349728"
+            },
+            {
+                "Message": "Absolutely stunning fragrance! I'm in love.",
+                "Rating": 5,
+                "ReviewerName": "matthew9012",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2023-01-25T19:55:35.814267"
+            },
+            {
+                "Message": "It's okay, but nothing special. Expected more.",
+                "Rating": 3,
+                "ReviewerName": "andrew7890",
+                "ProductId": 1,
+                "ReviewerId": 23,
+                "DateAdded": "2020-05-18T08:40:47.963852"
+            },
+            {
+                "Message": "The scent is too strong for my liking.",
+                "Rating": 2,
+                "ReviewerName": "robert9012",
+                "ProductId": 1,
+                "ReviewerId": 20,
+                "DateAdded": "2019-11-11T11:05:30.528146"
+            },
+            {
+                "Message": "Very subtle scent. Perfect for everyday wear.",
+                "Rating": 4,
+                "ReviewerName": "jacob4567",
+                "ProductId": 1,
+                "ReviewerId": 17,
+                "DateAdded": "2021-09-03T14:20:25.926437"
+            },
+            {
+                "Message": "I absolutely hate the scent. Smells awful.",
+                "Rating": 1,
+                "ReviewerName": "samantha3456",
+                "ProductId": 1,
+                "ReviewerId": 22,
+                "DateAdded": "2019-04-07T10:15:45.753619"
+            },
+            {
+                "Message": "Not bad. Quite refreshing actually.",
+                "Rating": 4,
+                "ReviewerName": "amanda3456",
+                "ProductId": 1,
+                "ReviewerId": 14,
+                "DateAdded": "2022-08-12T16:35:50.314785"
+            },
+            {
+                "Message": "It's alright. Nothing remarkable about it.",
+                "Rating": 3,
+                "ReviewerName": "christopher7890",
+                "ProductId": 1,
+                "ReviewerId": 4,
+                "DateAdded": "2020-01-30T09:45:15.682940"
+            },
+            {
+                "Message": "Love the packaging, but the scent is disappointing.",
+                "Rating": 2,
+                "ReviewerName": "david345",
+                "ProductId": 1,
+                "ReviewerId": 3,
+                "DateAdded": "2022-03-27T13:50:20.479361"
+            },
+            {
+                "Message": "The scent is unique and captivating. Highly recommended.",
+                "Rating": 5,
+                "ReviewerName": "kevin5678",
+                "ProductId": 1,
+                "ReviewerId": 25,
+                "DateAdded": "2023-05-10T18:55:55.896712"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 23
     },
     {
         "Name": "Bleu De Chanel",
@@ -33,7 +206,90 @@
                 "IsMain": true
             }
         ],
-        "Amount": 1
+        "Reviews": [
+            {
+                "Message": "The scent is intoxicating! Can't get enough of it.",
+                "Rating": 5,
+                "ReviewerName": "emily012",
+                "ProductId": 1,
+                "ReviewerId": 7,
+                "DateAdded": "2020-07-18T11:25:30.718294"
+            },
+            {
+                "Message": "Not impressed. Expected better quality.",
+                "Rating": 2,
+                "ReviewerName": "daniel567",
+                "ProductId": 1,
+                "ReviewerId": 8,
+                "DateAdded": "2019-06-29T13:40:55.625831"
+            },
+            {
+                "Message": "Decent fragrance, but doesn't last long.",
+                "Rating": 3,
+                "ReviewerName": "michael789",
+                "ProductId": 1,
+                "ReviewerId": 2,
+                "DateAdded": "2019-12-05T09:15:20.489375"
+            },
+            {
+                "Message": "Lovely scent! Perfect for any occasion.",
+                "Rating": 4,
+                "ReviewerName": "jennifer8901",
+                "ProductId": 1,
+                "ReviewerId": 18,
+                "DateAdded": "2021-02-14T16:30:45.824976"
+            },
+            {
+                "Message": "Too strong for my taste. Gave me a headache.",
+                "Rating": 2,
+                "ReviewerName": "jessica890",
+                "ProductId": 1,
+                "ReviewerId": 9,
+                "DateAdded": "2020-10-09T10:55:10.367542"
+            },
+            {
+                "Message": "Nice fragrance, but a bit too expensive.",
+                "Rating": 3,
+                "ReviewerName": "sarah678",
+                "ProductId": 1,
+                "ReviewerId": 5,
+                "DateAdded": "2019-09-20T14:20:35.752814"
+            },
+            {
+                "Message": "Absolutely stunning scent! Gets compliments all the time.",
+                "Rating": 5,
+                "ReviewerName": "laura5678",
+                "ProductId": 1,
+                "ReviewerId": 12,
+                "DateAdded": "2021-07-30T08:45:55.921463"
+            },
+            {
+                "Message": "Not my favorite. Expected more from this brand.",
+                "Rating": 3,
+                "ReviewerName": "william1234",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2019-11-15T12:10:20.458731"
+            },
+            {
+                "Message": "Very disappointed. Didn't live up to the hype.",
+                "Rating": 1,
+                "ReviewerName": "samantha3456",
+                "ProductId": 1,
+                "ReviewerId": 22,
+                "DateAdded": "2020-04-03T09:35:40.836275"
+            },
+            {
+                "Message": "Amazing scent! My new favorite.",
+                "Rating": 5,
+                "ReviewerName": "james901",
+                "ProductId": 1,
+                "ReviewerId": 6,
+                "DateAdded": "2022-04-25T15:50:50.972618"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 10
     },
     {
         "Name": "Versace Eros",
@@ -69,7 +325,50 @@
                 "IsMain": true
             }
         ],
-        "Amount": 1
+        "Reviews": [
+            {
+                "Message": "Disappointing fragrance. Doesn't last long.",
+                "Rating": 2,
+                "ReviewerName": "ashley0123",
+                "ProductId": 1,
+                "ReviewerId": 15,
+                "DateAdded": "2020-08-12T11:25:30.718294"
+            },
+            {
+                "Message": "Unique scent. Not for everyone.",
+                "Rating": 4,
+                "ReviewerName": "matthew9012",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2022-11-20T13:40:55.625831"
+            },
+            {
+                "Message": "Overpowering scent. Gave me a headache.",
+                "Rating": 1,
+                "ReviewerName": "emily012",
+                "ProductId": 1,
+                "ReviewerId": 7,
+                "DateAdded": "2021-05-05T09:15:20.489375"
+            },
+            {
+                "Message": "Lovely fragrance. My go-to perfume.",
+                "Rating": 5,
+                "ReviewerName": "daniel567",
+                "ProductId": 1,
+                "ReviewerId": 8,
+                "DateAdded": "2023-07-10T16:30:45.824976"
+            },
+            {
+                "Message": "Average scent. Nothing special.",
+                "Rating": 3,
+                "ReviewerName": "jennifer8901",
+                "ProductId": 1,
+                "ReviewerId": 18,
+                "DateAdded": "2020-09-15T10:55:10.367542"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 5
     },
     {
         "Name": "Luna Rossa Ocean",
@@ -87,7 +386,34 @@
                 "IsMain": true
             }
         ],
-        "Amount": 1
+        "Reviews": [
+            {
+                "Message": "Absolutely love it! Would buy again.",
+                "Rating": 5,
+                "ReviewerName": "laura5678",
+                "ProductId": 1,
+                "ReviewerId": 12,
+                "DateAdded": "2023-02-14T16:30:45.824976"
+            },
+            {
+                "Message": "Best perfume I've ever used!",
+                "Rating": 5,
+                "ReviewerName": "michael789",
+                "ProductId": 1,
+                "ReviewerId": 2,
+                "DateAdded": "2022-05-10T10:55:10.367542"
+            },
+            {
+                "Message": "Unique scent. Highly recommend!",
+                "Rating": 5,
+                "ReviewerName": "james901",
+                "ProductId": 1,
+                "ReviewerId": 6,
+                "DateAdded": "2021-09-15T10:55:10.367542"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 3
     },
     {
         "Name": "Sauvage Elixir",
@@ -105,7 +431,106 @@
                 "IsMain": true
             }
         ],
-        "Amount": 1
+        "Reviews": [
+            {
+                "Message": "Absolutely love it! Would buy again.",
+                "Rating": 5,
+                "ReviewerName": "laura5678",
+                "ProductId": 1,
+                "ReviewerId": 12,
+                "DateAdded": "2022-02-14T16:30:45.824976"
+            },
+            {
+                "Message": "Best perfume I've ever used!",
+                "Rating": 5,
+                "ReviewerName": "michael789",
+                "ProductId": 1,
+                "ReviewerId": 2,
+                "DateAdded": "2022-04-10T10:55:10.367542"
+            },
+            {
+                "Message": "Unique scent. Highly recommend!",
+                "Rating": 5,
+                "ReviewerName": "james901",
+                "ProductId": 1,
+                "ReviewerId": 6,
+                "DateAdded": "2022-05-15T10:55:10.367542"
+            },
+            {
+                "Message": "Lovely fragrance. My go-to perfume.",
+                "Rating": 4,
+                "ReviewerName": "daniel567",
+                "ProductId": 1,
+                "ReviewerId": 8,
+                "DateAdded": "2022-06-18T16:30:45.824976"
+            },
+            {
+                "Message": "Nice scent. Pleasant and refreshing.",
+                "Rating": 4,
+                "ReviewerName": "ashley0123",
+                "ProductId": 1,
+                "ReviewerId": 15,
+                "DateAdded": "2022-07-20T10:55:10.367542"
+            },
+            {
+                "Message": "Good fragrance. Suits my taste.",
+                "Rating": 3,
+                "ReviewerName": "sarah678",
+                "ProductId": 1,
+                "ReviewerId": 5,
+                "DateAdded": "2022-08-25T09:15:20.489375"
+            },
+            {
+                "Message": "Decent perfume. Not bad, not great.",
+                "Rating": 3,
+                "ReviewerName": "jennifer8901",
+                "ProductId": 1,
+                "ReviewerId": 18,
+                "DateAdded": "2022-09-30T16:30:45.824976"
+            },
+            {
+                "Message": "It's alright. Gets the job done.",
+                "Rating": 3,
+                "ReviewerName": "jessica890",
+                "ProductId": 1,
+                "ReviewerId": 9,
+                "DateAdded": "2022-10-10T10:55:10.367542"
+            },
+            {
+                "Message": "Good scent. Enjoyable and long-lasting.",
+                "Rating": 4,
+                "ReviewerName": "matthew9012",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2022-11-05T13:40:55.625831"
+            },
+            {
+                "Message": "Pleasant fragrance. Would recommend.",
+                "Rating": 4,
+                "ReviewerName": "emily012",
+                "ProductId": 1,
+                "ReviewerId": 7,
+                "DateAdded": "2022-12-18T11:25:30.718294"
+            },
+            {
+                "Message": "Not bad, could be better.",
+                "Rating": 3,
+                "ReviewerName": "robert9012",
+                "ProductId": 1,
+                "ReviewerId": 20,
+                "DateAdded": "2023-01-15T12:10:20.458731"
+            },
+            {
+                "Message": "Average scent. Nothing remarkable.",
+                "Rating": 3,
+                "ReviewerName": "david345",
+                "ProductId": 1,
+                "ReviewerId": 3,
+                "DateAdded": "2023-02-05T16:30:45.824976"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 9
     },
     {
         "Name": "Acqua Di Gio",
@@ -123,7 +548,26 @@
                 "IsMain": true
             }
         ],
-        "Amount": 1
+        "Reviews": [
+            {
+                "Message": "Smells terrible. Would not recommend.",
+                "Rating": 1,
+                "ReviewerName": "nicole1234",
+                "ProductId": 1,
+                "ReviewerId": 24,
+                "DateAdded": "2022-06-15T10:55:10.367542"
+            },
+            {
+                "Message": "The scent is overpowering. Gave me a headache.",
+                "Rating": 1,
+                "ReviewerName": "samantha3456",
+                "ProductId": 1,
+                "ReviewerId": 22,
+                "DateAdded": "2022-07-20T14:20:35.752814"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 2
     },
     {
         "Name": "Dylan Blue",
@@ -144,21 +588,186 @@
         "Amount": 1
     },
     {
-        "Name": "Polo Red",
-        "Scent": "Woody, Spicy",
+        "Name": "Bloom",
+        "Scent": "Floral",
         "Brand": {
-            "Name": "Ralph Lauren"
+            "Name": "Gucci"
         },
-        "Price": 88.00,
-        "Stock": 5,
-        "Description": "Sparkling Red Grapefruit mixes with spicy Red Saffron, Sensual Redwood, and an adrenaline-fueled Coffee accord. Presented in a bottle with sleek curves and matte black accents for a bold statement.",
+        "Price": 104.99,
+        "Stock": 12,
+        "Description": "A scent designed to celebrate the authenticity, vitality and diversity of women—flourishing in a natural, expressive and individual way. Gucci Bloom is created to unfold like its name, capturing the rich scent of a thriving garden filled with an abundance of flowers. Tuberose and jasmine combine with Rangoon Creeper—a unique flower discovered in South India that is being used for the perfumery to create a rich fragrance that transports the wearer to an imaginary garden. The scent is presented in a lacquered bottle, reminiscent of porcelain, in a vintage powder pink shade with a Gucci label appliqué.",
         "Photos": [
             {
-                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706580005/FragranceHaven/Dev/klkzzodpfel51cmxlz9m.jpg",
-                "PublicId": "FragranceHaven/Dev/klkzzodpfel51cmxlz9m",
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706580005/FragranceHaven/Dev/d5zjhumzmvixue9bnzof.jpg",
+                "PublicId": "FragranceHaven/Dev/d5zjhumzmvixue9bnzof",
                 "IsMain": true
             }
         ],
         "Amount": 1
+    },
+    {
+        "Name": "Delina Exclusif",
+        "Scent": "Oriental, Musk , Rose, Floral",
+        "Brand": {
+            "Name": "PARFUMS DE MARLY"
+        },
+        "Price": 230.99,
+        "Stock": 2,
+        "Description": "Delina Exclusif is the full quintessence of Delina. A softer, more refined floral bouquet good enough to eat with scattered delicious hints of peach, apricot and lychee. After an opening of bergamot/pear/lychee, the Turkish rose takes on a veiling of incense and suggestions of burning oud before nestling into a soft bed of woody, amber and vanilla notes.",
+        "Photos": [
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706580005/FragranceHaven/Dev/u7oaaf925rnhlcn5d9np.jpg",
+                "PublicId": "FragranceHaven/Dev/u7oaaf925rnhlcn5d9np",
+                "IsMain": true
+            },
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706580005/FragranceHaven/Dev/iv4jqph85d2drllemxid.jpg",
+                "PublicId": "FragranceHaven/Dev/iv4jqph85d2drllemxid",
+                "IsMain": false
+            }
+        ],
+        "Reviews": [
+            {
+                "Message": "Absolutely love it! Would buy again.",
+                "Rating": 5,
+                "ReviewerName": "laura5678",
+                "ProductId": 1,
+                "ReviewerId": 12,
+                "DateAdded": "2022-02-14T16:30:45.824976"
+            },
+            {
+                "Message": "Best perfume I've ever used!",
+                "Rating": 5,
+                "ReviewerName": "michael789",
+                "ProductId": 1,
+                "ReviewerId": 2,
+                "DateAdded": "2022-04-10T10:55:10.367542"
+            },
+            {
+                "Message": "Unique scent. Highly recommend!",
+                "Rating": 5,
+                "ReviewerName": "james901",
+                "ProductId": 1,
+                "ReviewerId": 6,
+                "DateAdded": "2022-05-15T10:55:10.367542"
+            },
+            {
+                "Message": "Lovely fragrance. My go-to perfume.",
+                "Rating": 4,
+                "ReviewerName": "daniel567",
+                "ProductId": 1,
+                "ReviewerId": 8,
+                "DateAdded": "2022-06-18T16:30:45.824976"
+            },
+            {
+                "Message": "Nice scent. Pleasant and refreshing.",
+                "Rating": 4,
+                "ReviewerName": "ashley0123",
+                "ProductId": 1,
+                "ReviewerId": 15,
+                "DateAdded": "2022-07-20T10:55:10.367542"
+            },
+            {
+                "Message": "Good fragrance. Suits my taste.",
+                "Rating": 4,
+                "ReviewerName": "matthew9012",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2022-11-05T13:40:55.625831"
+            },
+            {
+                "Message": "Pleasant fragrance. Would recommend.",
+                "Rating": 4,
+                "ReviewerName": "emily012",
+                "ProductId": 1,
+                "ReviewerId": 7,
+                "DateAdded": "2022-12-18T11:25:30.718294"
+            },
+            {
+                "Message": "Not bad, could be better.",
+                "Rating": 4,
+                "ReviewerName": "robert9012",
+                "ProductId": 1,
+                "ReviewerId": 20,
+                "DateAdded": "2023-01-15T12:10:20.458731"
+            },
+            {
+                "Message": "Average scent. Nothing remarkable.",
+                "Rating": 4,
+                "ReviewerName": "david345",
+                "ProductId": 1,
+                "ReviewerId": 3,
+                "DateAdded": "2023-02-05T16:30:45.824976"
+            },
+            {
+                "Message": "Great fragrance. Lasts all day.",
+                "Rating": 4,
+                "ReviewerName": "sarah678",
+                "ProductId": 1,
+                "ReviewerId": 5,
+                "DateAdded": "2023-04-15T09:15:20.489375"
+            },
+            {
+                "Message": "Refreshing scent. Perfect for summer.",
+                "Rating": 4,
+                "ReviewerName": "jennifer8901",
+                "ProductId": 1,
+                "ReviewerId": 18,
+                "DateAdded": "2023-06-30T16:30:45.824976"
+            },
+            {
+                "Message": "Nice perfume. Good value for money.",
+                "Rating": 4,
+                "ReviewerName": "jessica890",
+                "ProductId": 1,
+                "ReviewerId": 9,
+                "DateAdded": "2023-08-10T10:55:10.367542"
+            },
+            {
+                "Message": "Love the scent. Would purchase again.",
+                "Rating": 4,
+                "ReviewerName": "william1234",
+                "ProductId": 1,
+                "ReviewerId": 11,
+                "DateAdded": "2023-09-25T16:30:45.824976"
+            },
+            {
+                "Message": "Fantastic fragrance. Highly recommended!",
+                "Rating": 5,
+                "ReviewerName": "nicole1234",
+                "ProductId": 1,
+                "ReviewerId": 24,
+                "DateAdded": "2023-10-20T10:55:10.367542"
+            },
+            {
+                "Message": "Great product. Delighted with the purchase.",
+                "Rating": 5,
+                "ReviewerName": "samantha3456",
+                "ProductId": 1,
+                "ReviewerId": 22,
+                "DateAdded": "2023-12-05T14:20:35.752814"
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 24
+    },
+    {
+        "Name": "Bright Crystal",
+        "Scent": "Oriental",
+        "Brand": {
+            "Name": "Versace"
+        },
+        "Price": 52.17,
+        "Stock": 20,
+        "Description": "Launched by the design house of Gianni Versace. When applying any fragrance please consider that there are several factors which can affect the natural smell of your skin and, in turn, the way a scent smells on you.  For instance, your mood, stress level, age, body chemistry, diet, and current medications may all alter the scents you wear.  Similarly, factor such as dry or oily skin can even affect the amount of time a fragrance will last after being applied.",
+        "Photos": [
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706580005/FragranceHaven/Dev/kmx5oqtrhhcqfrxdgkt1.jpg",
+                "PublicId": "FragranceHaven/Dev/kmx5oqtrhhcqfrxdgkt1",
+                "IsMain": true
+            }
+        ],
+        "Amount": 1,
+        "AmountSold": 3
     }
 ]

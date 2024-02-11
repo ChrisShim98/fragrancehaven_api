@@ -5,6 +5,7 @@ using AutoMapper;
 using fragrancehaven_api.DTOs;
 using fragrancehaven_api.Entity;
 using fragrancehaven_api.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -84,6 +85,7 @@ namespace api.Controllers
             };
         }
 
+        [Authorize(Policy = "RequireAccount")]
         [HttpPost("updatePassword")] // POST: api/account/updatePassword
         public async Task<ActionResult<UserDTO>> UpdatePassword(PasswordResetDTO passwordResetDTO)
         {
@@ -115,6 +117,7 @@ namespace api.Controllers
             };
         }
 
+        [Authorize(Policy = "RequireAccount")]
         [HttpGet("cart")] // GET: api/account/cart
         public async Task<ActionResult<List<Product>>> GetCart([FromQuery] string username)
         {
@@ -125,6 +128,7 @@ namespace api.Controllers
             return Ok(user.Cart);
         }
 
+        [Authorize(Policy = "RequireAccount")]
         [HttpDelete("cart")] // POST: api/account/cart
         public async Task<ActionResult<List<Product>>> EmptyCart([FromQuery] string username)
         {
@@ -144,6 +148,7 @@ namespace api.Controllers
             return Ok(user.Cart);
         }
 
+        [Authorize(Policy = "RequireAccount")]
         [HttpPut("cart/{id}")] // PUT: api/account/cart/{id}
         public async Task<ActionResult<List<Product>>> ModifyProductInCart(int id, [FromQuery] string username, bool addProduct)
         {

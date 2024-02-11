@@ -6,6 +6,7 @@ using AutoMapper;
 using fragrancehaven_api.DTOs;
 using fragrancehaven_api.Entity;
 using fragrancehaven_api.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,6 +39,18 @@ namespace fragrancehaven_api.Controllers
             return Ok(products);
         }
 
+        [HttpGet("{id}")] // GET: api/product/{id}
+        public async Task<ActionResult<PagedList<Product>>> GetProductById(int id)
+        {
+            Product product = await _uow.productRepository.FindProductById(id);
+
+            if (product == null)
+                return NotFound("Product not found");
+
+            return Ok(product);
+        }
+
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPost] // POST: api/product/
         public async Task<ActionResult<string>> CreateProduct(ProductDTO productDTO)
         {
@@ -77,6 +90,7 @@ namespace fragrancehaven_api.Controllers
             return BadRequest("Failed to save product");
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("{id}")] // DELETE: api/product/{id}
         public async Task<ActionResult<string>> DeleteProduct(int id)
         {
@@ -94,6 +108,7 @@ namespace fragrancehaven_api.Controllers
             return BadRequest("Failed to save product");
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPut("{id}")] // PUT: api/product/{id}
         public async Task<ActionResult<string>> EditProduct(int id, [FromBody] ProductDTO productDTO)
         {
@@ -143,6 +158,7 @@ namespace fragrancehaven_api.Controllers
             return BadRequest("Failed to save product");
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPost("{id}/addPhoto")] // POST: api/product/{id}/addPhoto
         public async Task<ActionResult<string>> AddProductPhoto(int id, IFormFile file)
         {
@@ -169,6 +185,7 @@ namespace fragrancehaven_api.Controllers
             return BadRequest("Problem adding photo");
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("{id}/deletePhoto/{photoId}")] // DELETE: api/product/{id}/deletePhoto/{photoId}
         public async Task<ActionResult<string>> DeletePhoto(int id, int photoId)
         {
@@ -207,6 +224,7 @@ namespace fragrancehaven_api.Controllers
             return BadRequest("Problem deleting photo");
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPut("{id}/mainPhoto/{photoId}")] // PUT: api/product/{id}/mainPhoto/{photoId}
         public async Task<ActionResult<string>> SetMainPhoto(int id, int photoId)
         {
@@ -246,6 +264,7 @@ namespace fragrancehaven_api.Controllers
             return BadRequest("Problem setting main photo");
         }
 
+        [Authorize(Policy = "RequireAccount")]
         [HttpPost("{id}/addReview")] // POST: api/product/{id}/addReview
         public async Task<ActionResult<string>> AddReview(int id, [FromBody] ReviewDTO review)
         {
@@ -254,7 +273,7 @@ namespace fragrancehaven_api.Controllers
             if (product == null)
                 return NotFound("Product not found");
 
-            AppUser user = await _userManager.Users.SingleOrDefaultAsync(u => u.UserName == review.ReviewerName);
+            AppUser user = await _userManager.Users.SingleOrDefaultAsync(u => u.UserName == review.ReviewerName.ToLower());
             if (user == null)
                 return NotFound("User not found");
 
@@ -275,6 +294,40 @@ namespace fragrancehaven_api.Controllers
                 return Ok("Review Added");
 
             return BadRequest("Problem adding review");
+        }
+
+        [Authorize(Policy = "RequireAdminRole")]
+        [HttpDelete("{productId}/deleteReview/{reviewId}")] // DELETE: api/product/{productId}/deleteReview/{reviewId}
+        public async Task<ActionResult<string>> DeleteReview(int productId, int reviewId)
+        {
+            // Find product then add review
+            Product product = await _uow.productRepository.FindProductById(productId);
+            if (product == null)
+                return NotFound("Product not found");
+
+            product.Reviews.Remove(product.Reviews.FirstOrDefault(p => p.Id == reviewId));
+
+            if (await _uow.Complete())
+                return Ok("Review Deleted");
+
+            return BadRequest("Problem deleting review");
+        }
+
+        [Authorize(Policy = "RequireAdminRole")]
+        [HttpPost("{id}/addSale")] // POST: api/product/{id}/addSale
+        public async Task<ActionResult<string>> AddSale(int id, [FromBody] int saleAmount)
+        {
+            // Find product then add review
+            Product product = await _uow.productRepository.FindProductById(id);
+            if (product == null)
+                return NotFound("Product not found");
+
+            product.SalePercentage = saleAmount;
+
+            if (await _uow.Complete())
+                return Ok("Sale Amount Updated");
+
+            return BadRequest("Problem updating sale amount");
         }
     }
 }

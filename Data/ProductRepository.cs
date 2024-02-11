@@ -53,17 +53,43 @@ namespace fragrancehaven_api.Data
         {
             var query = _context.Products.AsQueryable();
 
-            if (paginationParams.SearchQuery != "")
+            if (!string.IsNullOrEmpty(paginationParams.SearchQuery))
             {
                 query = query.Where(p => p.Name.ToLower().Contains(paginationParams.SearchQuery));
             }
 
-            query = query.OrderBy(u => u.Id).Include(p => p.Brand).Include(p => p.Photos).Include(p => p.Reviews);
+            query = ApplySorting(query, paginationParams.OrderBy);
 
             return await PagedList<Product>.CreateAsync(
-                query.AsNoTracking(),
+                query.Include(p => p.Brand).Include(p => p.Photos).Include(p => p.Reviews).AsNoTracking(),
                 paginationParams.PageNumber,
                 paginationParams.PageSize);
+        }
+
+        private IQueryable<Product> ApplySorting(IQueryable<Product> query, string orderBy)
+        {
+            switch (orderBy)
+            {
+                case "name_asc":
+                    query = query.OrderBy(p => p.Name);
+                    break;
+                case "name_desc":
+                    query = query.OrderByDescending(p => p.Name);
+                    break;
+                case "amountSold_asc":
+                    query = query.OrderBy(p => p.AmountSold);
+                    break;
+                case "amountSold_desc":
+                    query = query.OrderByDescending(p => p.AmountSold);
+                    break;
+                // Add other sorting criteria as needed
+                default:
+                    // Default sorting criteria if orderBy is not provided or invalid
+                    query = query.OrderBy(p => p.Id);
+                    break;
+            }
+
+            return query;
         }
     }
 }

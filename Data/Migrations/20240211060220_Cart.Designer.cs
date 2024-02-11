@@ -11,7 +11,7 @@ using api.Data;
 namespace api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240211045427_Cart")]
+    [Migration("20240211060220_Cart")]
     partial class Cart
     {
         /// <inheritdoc />

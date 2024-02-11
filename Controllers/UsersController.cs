@@ -27,24 +27,26 @@ namespace api.Controllers
             _mapper = mapper;
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpGet]
-        public async Task<ActionResult<PagedList<AppUserDTO>>> GetUsers([FromQuery]PaginationParams paginationParams)
+        public async Task<ActionResult<PagedList<AppUserDTO>>> GetUsers([FromQuery] PaginationParams paginationParams)
         {
             var users = await _userRepository.GetUsersAsync(paginationParams);
-            
-            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage, 
+
+            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage,
                 users.PageSize, users.TotalCount, users.TotalPages));
-                
+
             return Ok(users);
         }
         [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("delete")]
-        public async Task<ActionResult> DeleteUser([FromQuery]int id)
+        public async Task<ActionResult> DeleteUser([FromQuery] int id)
         {
-            if (!await UserExists(id)) {
+            if (!await UserExists(id))
+            {
                 return BadRequest("User does not exist");
             }
-            
+
             _userRepository.DeleteUser(id);
             return Ok();
         }

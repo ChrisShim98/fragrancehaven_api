@@ -9,10 +9,10 @@ namespace api.Extensions
 {
     public static class IdentityServiceExtension
     {
-        public static IServiceCollection AddIdentityService(this IServiceCollection services, 
+        public static IServiceCollection AddIdentityService(this IServiceCollection services,
             IConfiguration config)
         {
-            services.AddIdentityCore<AppUser>(opt => 
+            services.AddIdentityCore<AppUser>(opt =>
             {
                 opt.Password.RequireNonAlphanumeric = false;
             })
@@ -33,9 +33,10 @@ namespace api.Extensions
                     };
                 });
 
-            services.AddAuthorization(opt => 
+            services.AddAuthorization(opt =>
             {
                 opt.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+                opt.AddPolicy("RequireAccount", policy => policy.RequireRole(new[] { "Admin", "Customer" }));
             });
 
             return services;

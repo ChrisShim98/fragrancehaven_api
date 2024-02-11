@@ -17,5 +17,7 @@ namespace fragrancehaven_api.Entity
         public int Amount { get; set; } = 1;
         public int AmountSold { get; set; } = 0;
         public DateTime DateAdded { get; set; } = DateTime.Now;
+        public int SalePercentage { get; set; } = 0;
+        public float SalePrice => Price - (Price * SalePercentage / 100f);
     }
 }
