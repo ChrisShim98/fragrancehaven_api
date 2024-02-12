@@ -129,7 +129,7 @@ namespace api.Controllers
         }
 
         [Authorize(Policy = "RequireAccount")]
-        [HttpDelete("cart")] // POST: api/account/cart
+        [HttpDelete("cart")] // DELETE: api/account/cart
         public async Task<ActionResult<List<Product>>> EmptyCart([FromQuery] string username)
         {
             AppUser user = await _userManager.Users

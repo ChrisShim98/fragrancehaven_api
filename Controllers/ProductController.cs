@@ -129,6 +129,8 @@ namespace fragrancehaven_api.Controllers
             updatedProduct.Id = id;
             updatedProduct.Brand.Name = productDTO.BrandName;
             updatedProduct.Photos = product.Photos;
+            updatedProduct.Reviews = product.Reviews;
+            updatedProduct.AmountSold = product.AmountSold;
 
             if (product.Name != productDTO.Name)
             {
@@ -314,10 +316,15 @@ namespace fragrancehaven_api.Controllers
         }
 
         [Authorize(Policy = "RequireAdminRole")]
-        [HttpPost("{id}/addSale")] // POST: api/product/{id}/addSale
-        public async Task<ActionResult<string>> AddSale(int id, [FromBody] int saleAmount)
+        [HttpPost("{id}/addSale/{saleAmount}")] // POST: api/product/{id}/addSale/{saleAmount}
+        public async Task<ActionResult<string>> AddSale(int id, int saleAmount)
         {
-            // Find product then add review
+            if (saleAmount > 100)
+                return BadRequest("Sale amount cannot exceed 100");
+
+            if (saleAmount < 0)
+                return BadRequest("Sale amount cannot be less than 0");
+
             Product product = await _uow.productRepository.FindProductById(id);
             if (product == null)
                 return NotFound("Product not found");
@@ -325,6 +332,10 @@ namespace fragrancehaven_api.Controllers
             product.SalePercentage = saleAmount;
 
             if (await _uow.Complete())
+                return Ok("Sale Amount Updated");
+
+            // Handle the case where the sale amount is zero
+            if (saleAmount == 0)
                 return Ok("Sale Amount Updated");
 
             return BadRequest("Problem updating sale amount");

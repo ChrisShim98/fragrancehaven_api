@@ -13,6 +13,7 @@ namespace api.Helpers
             CreateMap<RegisterDTO, AppUser>();
             CreateMap<AppUser, AppUserDTO>();
             CreateMap<ProductDTO, Product>();
+            CreateMap<TransactionDTO, Transaction>();
             CreateMap<PhotoDTO, Photo>();
             CreateMap<ReviewDTO, Review>();
         }

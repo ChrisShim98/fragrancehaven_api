@@ -37,7 +37,10 @@ namespace fragrancehaven_api.Data
             {
                 foreach (var property in typeof(Product).GetProperties())
                 {
-                    property.SetValue(product, property.GetValue(updatedProduct));
+                    if (property.Name != "SalePrice")
+                    {
+                        property.SetValue(product, property.GetValue(updatedProduct));
+                    }
                 }
             }
 
@@ -57,6 +60,15 @@ namespace fragrancehaven_api.Data
             {
                 query = query.Where(p => p.Name.ToLower().Contains(paginationParams.SearchQuery));
             }
+
+            if (paginationParams.ProductsWithReview)
+                query = query.Where(p => p.Reviews.Any());
+
+            if (paginationParams.ProductsOnSale)
+                query = query.Where(p => p.SalePercentage > 0);
+
+            if (paginationParams.ProductsInStock)
+                query = query.Where(p => p.Stock > 0);
 
             query = ApplySorting(query, paginationParams.OrderBy);
 

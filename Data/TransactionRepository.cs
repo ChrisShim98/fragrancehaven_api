@@ -1,4 +1,5 @@
 using api.Data;
+using api.Helpers;
 using AutoMapper;
 using fragrancehaven_api.Entity;
 using fragrancehaven_api.Interfaces;
@@ -16,9 +17,41 @@ namespace fragrancehaven_api.Data
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Transaction>> GetAllTransactions()
+        public void AddTransaction(Transaction transaction)
         {
-            return await _context.Transactions.Select(t => t).ToListAsync();
+            _context.Transactions.Add(transaction);
+        }
+
+        public async Task<PagedList<Transaction>> FindAllTransactionsAsync(PaginationParams paginationParams)
+        {
+            var query = _context.Transactions.AsQueryable();
+
+            if (!string.IsNullOrEmpty(paginationParams.SearchQuery))
+            {
+                query = query.Where(t => t.User.UserName.ToLower().Contains(paginationParams.SearchQuery));
+            }
+
+            return await PagedList<Transaction>.CreateAsync(
+                query.Include(t => t.ProductsPurchased).Include(t => t.User).AsNoTracking(),
+                paginationParams.PageNumber,
+                paginationParams.PageSize);
+        }
+
+        public async Task<PagedList<Transaction>> FindAllTransactionsForUserAsync(string username, PaginationParams paginationParams)
+        {
+            var query = _context.Transactions.AsQueryable();
+
+            query = query.Where(t => t.User.UserName.ToLower() == username.ToLower());
+
+            return await PagedList<Transaction>.CreateAsync(
+                query.Include(t => t.ProductsPurchased).AsNoTracking(),
+                paginationParams.PageNumber,
+                paginationParams.PageSize);
+        }
+
+        public async Task<Transaction> FindTransactionById(int id)
+        {
+            return await _context.Transactions.Include(t => t.ProductsPurchased).SingleOrDefaultAsync(t => t.Id == id);
         }
     }
 }
