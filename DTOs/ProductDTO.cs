@@ -13,6 +13,6 @@ namespace fragrancehaven_api.DTOs
         public int Stock { get; set; }
         public string Description { get; set; }
         public int Amount { get; set; } = 1;
-        public DateTime DateAdded { get; set; } = DateTime.Now;
+        public DateTime DateAdded { get; set; } = DateTime.UtcNow;
     }
 }

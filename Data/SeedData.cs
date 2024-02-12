@@ -12,7 +12,7 @@ namespace api.Data
         {
             if (await userManager.Users.AnyAsync()) return;
 
-            var userData = await File.ReadAllTextAsync("data/UserSeedData.json");
+            var userData = await File.ReadAllTextAsync("wwwroot/UserSeedData.json");
 
             var options = new JsonSerializerOptions{PropertyNameCaseInsensitive = true};
 
@@ -49,12 +49,16 @@ namespace api.Data
         {
             if (_dataContext.Products.Any()) return;
 
-            var productData = await File.ReadAllTextAsync("data/ProductSeedData.json");
+            var productData = await File.ReadAllTextAsync("wwwroot/ProductSeedData.json");
 
             var products = JsonSerializer.Deserialize<List<Product>>(productData);
 
             foreach (var product in products)
             {
+                foreach (var review in product.Reviews)
+                {
+                    review.DateAdded = DateTime.SpecifyKind(review.DateAdded, DateTimeKind.Utc);
+                }
                 _dataContext.Products.AddRange(product);
                 _dataContext.SaveChanges();
             };
