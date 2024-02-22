@@ -6,6 +6,7 @@ namespace fragrancehaven_api.Interfaces
         IBrandRepository brandRepository { get; }
         IReviewRepository reviewRepository { get; }
         ITransactionRepository transactionRepository { get; }
+        ICartProductRepository cartProductRepository { get; }
         Task<bool> Complete();
         bool HasChanges();
     }

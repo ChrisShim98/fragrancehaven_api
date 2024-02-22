@@ -16,11 +16,8 @@ if (builder.Environment.IsDevelopment())
     connString = builder.Configuration.GetConnectionString("DefaultConnection");
 else
 {
-    //connString = "Server=host.docker.internal; Port=5432; User Id=postgres; Password=root; Database=fragrancehaven;";
-
     // Use connection string provided at runtime by FlyIO.
     var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-
     // Parse connection URL to connection string for Npgsql
 
     connUrl = connUrl.Replace("postgres://", string.Empty);
@@ -33,7 +30,7 @@ else
     var pgHost = pgHostPort.Split(":")[0];
     var pgPort = pgHostPort.Split(":")[1];
 
-    connString = $"Server=fragrancehaven.internal;Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=require;";
+    connString = $"Server=fragrancehaven.internal;Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;";
 }
 builder.Services.AddDbContext<DataContext>(opt =>
 {
@@ -45,7 +42,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowCredentials()
-    .WithOrigins("http://localhost:3000"));
+    .WithOrigins("http://localhost:3000", "https://fragrancehaven.vercel.app", "https://res.cloudinary.com"));
 
 app.UseAuthentication();
 app.UseAuthorization();

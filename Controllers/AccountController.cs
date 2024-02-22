@@ -32,7 +32,7 @@ namespace api.Controllers
             if (await UserExists(registerDTO.Username))
                 return BadRequest("Username is taken!");
 
-            if (await EmailExists(registerDTO.Username))
+            if (await EmailExists(registerDTO.Email))
                 return BadRequest("Email is taken!");
 
             var user = _mapper.Map<AppUser>(registerDTO);
@@ -121,7 +121,7 @@ namespace api.Controllers
         [HttpGet("cart")] // GET: api/account/cart
         public async Task<ActionResult<List<Product>>> GetCart([FromQuery] string username)
         {
-            AppUser user = await _userManager.Users.Include(u => u.Cart).ThenInclude(c => c.Photos).SingleOrDefaultAsync(u => u.UserName == username);
+            AppUser user = await _userManager.Users.Include(u => u.Cart).ThenInclude(p => p.MainPhoto).SingleOrDefaultAsync(u => u.UserName == username);
             if (user == null)
                 return NotFound("User not found");
 
@@ -149,24 +149,37 @@ namespace api.Controllers
         }
 
         [Authorize(Policy = "RequireAccount")]
-        [HttpPut("cart/{id}")] // PUT: api/account/cart/{id}
-        public async Task<ActionResult<List<Product>>> ModifyProductInCart(int id, [FromQuery] string username, bool addProduct)
+        [HttpPut("cart/{productName}")] // PUT: api/account/cart/{productName}
+        public async Task<ActionResult<List<Product>>> ModifyProductInCart(string productName, [FromQuery] string username, bool addProduct)
         {
             AppUser user = await _userManager.Users
                 .Include(u => u.Cart)
-                .ThenInclude(p => p.Photos)
                 .SingleOrDefaultAsync(u => u.UserName == username);
 
             if (user == null)
                 return NotFound("User not found");
 
+            Product foundProduct = await _uow.productRepository.FindProductByName(productName.Replace("%20", " "));
+            if (foundProduct == null)
+                return NotFound("Product not found");
+
             if (addProduct)
-            {
-                Product productToAdd = user.Cart.FirstOrDefault(p => p.Id == id);
+            {   
+                CartProduct productToAdd = user.Cart.FirstOrDefault(p => p.Name == foundProduct.Name);
+
+                if (productToAdd != null && productToAdd.Amount + 1 > foundProduct.Stock)
+                    return BadRequest("Insufficient items in stock");
 
                 if (productToAdd == null)
                 {
-                    productToAdd = await _uow.productRepository.FindProductById(id);
+                    productToAdd = new CartProduct
+                    {
+                        Name = foundProduct.Name,
+                        BrandName = foundProduct.Brand.Name,
+                        Price = foundProduct.SalePrice > 0 ? foundProduct.SalePrice : foundProduct.Price,
+                        MainPhoto = foundProduct.Photos.Single(p => p.IsMain == true),
+                        User = user
+                    };
                     user.Cart.Add(productToAdd);
                 }
                 else
@@ -176,7 +189,7 @@ namespace api.Controllers
             }
             else
             {
-                Product productToRemove = user.Cart.FirstOrDefault(p => p.Id == id);
+                CartProduct productToRemove = user.Cart.FirstOrDefault(p => p.Name == foundProduct.Name);
 
                 if (productToRemove == null)
                     return NotFound("Product not found");
@@ -184,6 +197,7 @@ namespace api.Controllers
                 if (productToRemove.Amount == 1)
                 {
                     user.Cart.Remove(productToRemove);
+                    _uow.cartProductRepository.DeleteProduct(productToRemove);
                 }
                 else
                 {

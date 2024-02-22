@@ -18,6 +18,7 @@ namespace api.Data
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<CartProduct> CartProducts { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Photo> Photos { get; set; }
 

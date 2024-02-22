@@ -4,7 +4,7 @@ namespace fragrancehaven_api.DTOs
 {
     public class TransactionDTO
     {
-        public List<Product> ProductsPurchased { get; set; }
+        public List<PurchasedProduct> ProductsPurchased { get; set; }
         public float TotalSpent { get; set; }
         public string Username { get; set; }
         public DateTime DatePurchased { get; set; } = DateTime.UtcNow;

@@ -21,6 +21,9 @@ namespace fragrancehaven_api.Data
 
         public ITransactionRepository transactionRepository => new TransactionRepository(_context, _mapper);
 
+        public ICartProductRepository cartProductRepository => new CartProductRepository(_context, _mapper);
+
+
         public async Task<bool> Complete()
         {
             return await _context.SaveChangesAsync() > 0;

@@ -1,5 +1,3 @@
-using api.Entity;
-
 namespace fragrancehaven_api.Entity
 {
     public class Product

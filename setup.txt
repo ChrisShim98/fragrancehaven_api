@@ -1,0 +1,15 @@
+-- Run docker container locally -- 
+docker run --name [app_name] -p 8080:80 [username]/[app_name]:latest
+
+-- Setup for api to fly.io --
+docker build -t [usename]/[app_name] .
+docker push [username]/[app_name]:latest
+fly launch --image [username]/[app_name]:latest
+fly deploy
+
+-- Setup postgres locally --
+docker pull postgres	
+docker run --name [app_name] -e POSTGRES_PASSWORD=root -d postgres
+
+Add a docker-compose.yml file with the details of postgres container
+Run docker-compose up -d

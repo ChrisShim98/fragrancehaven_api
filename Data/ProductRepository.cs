@@ -51,6 +51,10 @@ namespace fragrancehaven_api.Data
         {
             return await _context.Products.Include(p => p.Brand).Include(p => p.Photos).Include(p => p.Reviews).SingleOrDefaultAsync(p => p.Id == productId);
         }
+        public async Task<Product> FindProductByName(string productName)
+        {
+            return await _context.Products.Include(p => p.Brand).Include(p => p.Photos).SingleOrDefaultAsync(p => p.Name == productName);
+        }
 
         public async Task<PagedList<Product>> GetAllProductsAsync(PaginationParams paginationParams)
         {
@@ -93,6 +97,18 @@ namespace fragrancehaven_api.Data
                     break;
                 case "amountSold_desc":
                     query = query.OrderByDescending(p => p.AmountSold);
+                    break;
+                case "price_asc":
+                    query = query.OrderBy(p => p.Price);
+                    break;
+                case "price_desc":
+                    query = query.OrderByDescending(p => p.Price);
+                    break;
+                case "stock_asc":
+                    query = query.OrderBy(p => p.Stock);
+                    break;
+                case "stock_desc":
+                    query = query.OrderByDescending(p => p.Stock);
                     break;
                 // Add other sorting criteria as needed
                 default:

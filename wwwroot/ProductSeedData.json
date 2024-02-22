@@ -320,8 +320,8 @@
         "Description": "Gucci fragrances opens a new story of magic and imagination in Luxury Collection: The Alchemist’s Garden. The singular unisex fragrances in The Alchemist's collection of Eau de Parfum, acque profumate and oils become customizable and transformative when layered in a multitude of perfume combinations to construct a special enticing Gucci scent that stays all day.",
         "Photos": [
             {
-                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579151/FragranceHaven/Dev/kj2d6lolypeiqhpiyd2c.webp",
-                "PublicId": "FragranceHaven/Dev/kj2d6lolypeiqhpiyd2c",
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579151/FragranceHaven/Dev/gucci2_kyirhw.jpg",
+                "PublicId": "FragranceHaven/Dev/gucci2_kyirhw",
                 "IsMain": true
             }
         ],
@@ -426,9 +426,14 @@
         "Description": "Sauvage Elixir rewrites the rules of men's perfume at Dior by pushing the boundaries of extreme concentration. Stretched to their limits, the Citrus, Wood and Spice notes of the fragrance express an exuberance that results in the unexpected signature trail of Dior Sauvage Elixir.",
         "Photos": [
             {
-                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579418/FragranceHaven/Dev/cvcuwmgdm5txoglq0sql.webp",
-                "PublicId": "FragranceHaven/Dev/cvcuwmgdm5txoglq0sql",
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579418/FragranceHaven/Dev/dior_wy03qp.jpg",
+                "PublicId": "FragranceHaven/Dev/dior_wy03qp",
                 "IsMain": true
+            },
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579418/FragranceHaven/Dev/dior2_wszfng.jpg",
+                "PublicId": "FragranceHaven/Dev/dior2_wszfng",
+                "IsMain": false
             }
         ],
         "Reviews": [
@@ -543,9 +548,14 @@
         "Description": "The ultimate fresh cologne for men opens with a splash of marine notes including Calabrian bergamot, neroli, and green tangerine. Classic and perfectly balanced, this aquatic men's fragrance captures the pure freshness and warmth of the Mediterranean Sea.",
         "Photos": [
             {
-                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579526/FragranceHaven/Dev/x7i1ijyvhygohytkj0ua.jpg",
-                "PublicId": "FragranceHaven/Dev/x7i1ijyvhygohytkj0ua",
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1708494090/FragranceHaven/Dev/aqua_ntf4ix.jpg",
+                "PublicId": "FragranceHaven/Dev/aqua_ntf4ix",
                 "IsMain": true
+            },
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1708494090/FragranceHaven/Dev/aqua2_f56x2d.jpg",
+                "PublicId": "FragranceHaven/Dev/aqua2_f56x2d",
+                "IsMain": false
             }
         ],
         "Reviews": [
@@ -580,9 +590,14 @@
         "Description": "Versace Pour Homme Dylan Blue is a fresh and vibrant fragrance for men. It is a blend of citrus notes, including bergamot, grapefruit, and lemon, which create a sparkling and energetic opening. The heart of the fragrance is a blend of lavender, geranium, and cardamom, which add depth and complexity to the scent. The base of the fragrance is a blend of vetiver, cedarwood, and oakmoss, which provide a warm and woody finish. This fragrance is perfect for any occasion, whether it's a day at the office or a night out on the town. It is a versatile fragrance that can be worn year-round and is sure to turn heads.",
         "Photos": [
             {
-                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579964/FragranceHaven/Dev/bpwy5d9k7ixerh9v68wy.webp",
-                "PublicId": "FragranceHaven/Dev/bpwy5d9k7ixerh9v68wy",
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579964/FragranceHaven/Dev/blue2_ub0fif.jpg",
+                "PublicId": "FragranceHaven/Dev/blue2_ub0fif",
                 "IsMain": true
+            },
+            {
+                "Url": "https://res.cloudinary.com/dhpo94oka/image/upload/v1706579964/FragranceHaven/Dev/blue_nxpn69.jpg",
+                "PublicId": "FragranceHaven/Dev/blue_nxpn69",
+                "IsMain": false
             }
         ],
         "Amount": 1

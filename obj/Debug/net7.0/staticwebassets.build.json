@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "pyaMSCEWRZ4nvKCja2XnniyJFEBxfxA7VVvbHvFd6MQ=",
+  "Hash": "XTu52tCk5nPWIKhENV3ngIhfagLL44eL/fe9uIJxZb0=",
   "Source": "api",
   "BasePath": "_content/api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "api\\wwwroot",
+      "Source": "api",
+      "ContentRoot": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\ProductSeedData.json",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "ProductSeedData.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductSeedData.json"
+    },
+    {
+      "Identity": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\UserSeedData.json",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "UserSeedData.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserSeedData.json"
+    }
+  ]
 }

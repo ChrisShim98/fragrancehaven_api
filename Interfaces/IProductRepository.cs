@@ -8,6 +8,7 @@ namespace fragrancehaven_api.Interfaces
         void AddProduct(Product product);
         void DeleteProduct(Product product);
         Task<Product> FindProductById(int productId);
+        Task<Product> FindProductByName(string productName);
         Task<PagedList<Product>> GetAllProductsAsync(PaginationParams paginationParams);
         Task<bool> CheckIfProductExists(Product product);
         void EditProduct(Product product, Product updatedProduct);

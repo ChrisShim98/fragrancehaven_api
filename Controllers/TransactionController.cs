@@ -68,28 +68,35 @@ namespace fragrancehaven_api.Controllers
                     return BadRequest($"{property.Name} is missing");
             }
 
+            // Find user
+            AppUser user = await _userManager.Users.Include(u => u.Cart).SingleOrDefaultAsync(u => u.UserName == transactionDTO.Username.ToLower());
+            if (user == null)
+                return NotFound("User not found");
+
             Transaction transaction = _mapper.Map<Transaction>(transactionDTO);
-            List<Product> foundProducts = new();
+            List<PurchasedProduct> foundProducts = new();
             foreach (var product in transactionDTO.ProductsPurchased)
             {
-                Product productFound = await _uow.productRepository.FindProductById(product.Id);
+                Product productFound = await _uow.productRepository.FindProductByName(product.Name);
                 if (productFound == null)
                     return NotFound("Product not found");
 
                 // Increase amount sold on product
                 productFound.AmountSold += product.Amount;
+                // Decrease the amount available
+                productFound.Stock -= product.Amount;
                 _uow.productRepository.EditProduct(productFound, null);
 
-                foundProducts.Add(productFound);
+                foundProducts.Add(new PurchasedProduct {
+                    Name = productFound.Name,
+                    BrandName = productFound.Brand.Name,
+                    PurchasedPrice = productFound.SalePrice > 0 ? productFound.SalePrice : productFound.Price,
+                    Amount = product.Amount
+                });
             }
             transaction.ProductsPurchased.Clear();
             transaction.ProductsPurchased.AddRange(foundProducts);
             
-            // Find user
-            AppUser user = await _userManager.Users.SingleOrDefaultAsync(u => u.UserName == transactionDTO.Username.ToLower());
-            if (user == null)
-                return NotFound("User not found");
-
             // Map foreign keys
             transaction.User = user;
             transaction.UserId = user.Id;
