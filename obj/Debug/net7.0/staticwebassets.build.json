@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XTu52tCk5nPWIKhENV3ngIhfagLL44eL/fe9uIJxZb0=",
+  "Hash": "d7CpCw5D73R+kGbNmfOB8/ZZ2WPTq42FAnOWXKEPQdw=",
   "Source": "api",
   "BasePath": "_content/api",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductSeedData.json"
+    },
+    {
+      "Identity": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\TransactionSeedData.json",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "TransactionSeedData.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\TransactionSeedData.json"
     },
     {
       "Identity": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\UserSeedData.json",

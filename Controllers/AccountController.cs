@@ -149,6 +149,45 @@ namespace api.Controllers
         }
 
         [Authorize(Policy = "RequireAccount")]
+        [HttpPost("cart")] // POST: api/account/cart
+        public async Task<ActionResult<List<Product>>> AddCart([FromBody] List<Product> cart, [FromQuery] string username)
+        {
+            AppUser user = await _userManager.Users
+                .Include(u => u.Cart)
+                .SingleOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+                return NotFound("User not found");
+
+            List<CartProduct> foundProducts = new();
+
+            foreach (var product in cart)
+            {
+                Product foundProduct = await _uow.productRepository.FindProductByName(product.Name);
+                if (foundProduct == null)
+                    return NotFound("Product not found");
+
+                foundProducts.Add(new CartProduct
+                {
+                    Name = foundProduct.Name,
+                    BrandName = foundProduct.Brand.Name,
+                    Price = foundProduct.SalePrice > 0 ? foundProduct.SalePrice : foundProduct.Price,
+                    MainPhoto = foundProduct.Photos.Single(p => p.IsMain == true),
+                    Amount = product.Amount,
+                    User = user
+                });
+            }
+
+            // Add all products to cart
+            user.Cart = foundProducts;
+
+            // Save changes to the database
+            await _uow.Complete();
+
+            return Ok(user.Cart);
+        }
+
+        [Authorize(Policy = "RequireAccount")]
         [HttpPut("cart/{productName}")] // PUT: api/account/cart/{productName}
         public async Task<ActionResult<List<Product>>> ModifyProductInCart(string productName, [FromQuery] string username, bool addProduct)
         {
@@ -164,7 +203,7 @@ namespace api.Controllers
                 return NotFound("Product not found");
 
             if (addProduct)
-            {   
+            {
                 CartProduct productToAdd = user.Cart.FirstOrDefault(p => p.Name == foundProduct.Name);
 
                 if (productToAdd != null && productToAdd.Amount + 1 > foundProduct.Stock)

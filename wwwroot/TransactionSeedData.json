@@ -1,0 +1,1475 @@
+[
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Eau de Parfum",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 89.99,
+                "Amount": 3
+            },
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 409.95,
+        "UserName": "jane456",
+        "UserEmail": "jane.smith@outlook.com",
+        "DatePurchased": "2023-09-15T14:30:00Z",
+        "LastFourOfCard": 9876,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Coco Mademoiselle",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 99.99,
+        "UserName": "david345",
+        "UserEmail": "david.davis@hotmail.com",
+        "DatePurchased": "2023-10-20T09:45:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "sarah678",
+        "UserEmail": "sarah.wilson@gmail.com",
+        "DatePurchased": "2023-11-05T16:20:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 269.97,
+        "UserName": "james901",
+        "UserEmail": "james.taylor@outlook.com",
+        "DatePurchased": "2023-12-10T14:00:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            },
+            {
+                "Name": "J'adore",
+                "BrandName": "Dior",
+                "PurchasedPrice": 119.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 179.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2023-08-25T10:30:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Invictus",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 2
+            },
+            {
+                "Name": "Boss Bottled",
+                "BrandName": "Hugo Boss",
+                "PurchasedPrice": 69.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 249.97,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2023-07-15T13:45:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "jacob4567",
+        "UserEmail": "jacob.green@outlook.com",
+        "DatePurchased": "2023-06-12T11:15:00Z",
+        "LastFourOfCard": 8901,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "One Million",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Chloe",
+                "BrandName": "Chloe",
+                "PurchasedPrice": 109.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 199.98,
+        "UserName": "amanda3456",
+        "UserEmail": "amanda.walker@gmail.com",
+        "DatePurchased": "2023-05-20T09:30:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bleu de Chanel",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 299.97,
+        "UserName": "nicole1234",
+        "UserEmail": "nicole.rivera@gmail.com",
+        "DatePurchased": "2023-04-08T15:20:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Good Girl",
+                "BrandName": "Carolina Herrera",
+                "PurchasedPrice": 129.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 259.98,
+        "UserName": "kevin5678",
+        "UserEmail": "kevin.turner@hotmail.com",
+        "DatePurchased": "2023-03-17T13:45:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Nuit de L'Homme",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Sauvage",
+                "BrandName": "Dior",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 169.98,
+        "UserName": "robert9012",
+        "UserEmail": "robert.carter@gmail.com",
+        "DatePurchased": "2023-02-05T11:30:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.99,
+        "UserName": "laura5678",
+        "UserEmail": "laura.lee@outlook.com",
+        "DatePurchased": "2023-01-10T12:00:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Refunded",
+        "RefundedDate": "2023-02-01T08:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Le Male",
+                "BrandName": "Jean Paul Gaultier",
+                "PurchasedPrice": 79.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "matthew9012",
+        "UserEmail": "matthew.clark@yahoo.com",
+        "DatePurchased": "2023-03-05T14:45:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Armani Code",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            },
+            {
+                "Name": "La Petite Robe Noire",
+                "BrandName": "Guerlain",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 189.98,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2023-04-20T16:00:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Invictus",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 179.98,
+        "UserName": "samantha3456",
+        "UserEmail": "samantha.morris@outlook.com",
+        "DatePurchased": "2023-05-15T10:30:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Dior Homme",
+                "BrandName": "Dior",
+                "PurchasedPrice": 99.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 299.97,
+        "UserName": "andrew7890",
+        "UserEmail": "andrew.ward@yahoo.com",
+        "DatePurchased": "2023-06-25T11:45:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2023-07-10T09:15:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Good Girl",
+                "BrandName": "Carolina Herrera",
+                "PurchasedPrice": 129.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 129.99,
+        "UserName": "joseph2345",
+        "UserEmail": "joseph.baker@gmail.com",
+        "DatePurchased": "2023-07-20T14:30:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Refunded",
+        "RefundedDate": "2023-08-05T10:45:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 2
+            },
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 229.97,
+        "UserName": "jacob4567",
+        "UserEmail": "jacob.green@outlook.com",
+        "DatePurchased": "2023-08-10T12:00:00Z",
+        "LastFourOfCard": 8901,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Chloe",
+                "BrandName": "Chloe",
+                "PurchasedPrice": 109.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 189.98,
+        "UserName": "james901",
+        "UserEmail": "james.taylor@outlook.com",
+        "DatePurchased": "2023-09-05T13:15:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Le Male",
+                "BrandName": "Jean Paul Gaultier",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2023-10-20T10:30:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Eau de Parfum",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.98,
+        "UserName": "robert9012",
+        "UserEmail": "robert.carter@gmail.com",
+        "DatePurchased": "2023-11-15T15:00:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Refunded",
+        "RefundedDate": "2023-11-20T11:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Coco Mademoiselle",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Bleu de Chanel",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 199.98,
+        "UserName": "emily012",
+        "UserEmail": "emily.brown@gmail.com",
+        "DatePurchased": "2023-12-01T10:00:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "One Million",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 2
+            },
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 249.97,
+        "UserName": "sarah678",
+        "UserEmail": "sarah.wilson@gmail.com",
+        "DatePurchased": "2023-11-15T14:30:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2023-10-05T13:00:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Armani Code",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 189.98,
+        "UserName": "michael789",
+        "UserEmail": "michael.johnson@yahoo.com",
+        "DatePurchased": "2023-09-20T15:45:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Refunded",
+        "RefundedDate": "2023-10-05T09:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 119.98,
+        "UserName": "daniel567",
+        "UserEmail": "daniel.anderson@gmail.com",
+        "DatePurchased": "2023-08-10T11:00:00Z",
+        "LastFourOfCard": 6789,
+        "Status": "Refunded",
+        "RefundedDate": "2023-09-01T08:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Eau de Parfum",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 239.98,
+        "UserName": "jessica890",
+        "UserEmail": "jessica.thomas@hotmail.com",
+        "DatePurchased": "2023-07-25T14:30:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2023-08-15T09:45:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Invictus",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 269.97,
+        "UserName": "william1234",
+        "UserEmail": "william.white@gmail.com",
+        "DatePurchased": "2023-06-15T12:30:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 2
+            },
+            {
+                "Name": "Good Girl",
+                "BrandName": "Carolina Herrera",
+                "PurchasedPrice": 129.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 289.97,
+        "UserName": "jacob4567",
+        "UserEmail": "jacob.green@outlook.com",
+        "DatePurchased": "2023-05-10T11:00:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Nuit de L'Homme",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Bleu de Chanel",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 179.98,
+        "UserName": "daniel567",
+        "UserEmail": "daniel.anderson@gmail.com",
+        "DatePurchased": "2023-04-05T09:30:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 299.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2023-03-15T14:45:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2023-03-30T10:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "J'adore",
+                "BrandName": "Dior",
+                "PurchasedPrice": 119.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 119.99,
+        "UserName": "nicole1234",
+        "UserEmail": "nicole.rivera@gmail.com",
+        "DatePurchased": "2023-02-20T13:00:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Refunded",
+        "RefundedDate": "2023-03-10T11:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 179.97,
+        "UserName": "jessica890",
+        "UserEmail": "jessica.thomas@hotmail.com",
+        "DatePurchased": "2023-01-25T12:30:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Chloe",
+                "BrandName": "Chloe",
+                "PurchasedPrice": 109.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 219.98,
+        "UserName": "laura5678",
+        "UserEmail": "laura.lee@outlook.com",
+        "DatePurchased": "2023-08-20T15:15:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Le Male",
+                "BrandName": "Jean Paul Gaultier",
+                "PurchasedPrice": 79.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 239.97,
+        "UserName": "andrew7890",
+        "UserEmail": "andrew.ward@yahoo.com",
+        "DatePurchased": "2023-07-10T14:00:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Armani Code",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 99.99,
+        "UserName": "michael789",
+        "UserEmail": "michael.johnson@yahoo.com",
+        "DatePurchased": "2023-12-05T10:30:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 139.98,
+        "UserName": "joseph2345",
+        "UserEmail": "joseph.baker@gmail.com",
+        "DatePurchased": "2023-12-12T12:45:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-05T09:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bleu de Chanel",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 189.98,
+        "UserName": "william1234",
+        "UserEmail": "william.white@gmail.com",
+        "DatePurchased": "2023-12-18T13:15:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 59.99,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2023-12-25T15:30:00Z",
+        "LastFourOfCard": 6789,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "david345",
+        "UserEmail": "david.davis@hotmail.com",
+        "DatePurchased": "2023-12-28T14:00:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-10T08:45:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Good Girl",
+                "BrandName": "Carolina Herrera",
+                "PurchasedPrice": 129.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 279.98,
+        "UserName": "james901",
+        "UserEmail": "james.taylor@outlook.com",
+        "DatePurchased": "2023-12-08T10:15:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Chloe",
+                "BrandName": "Chloe",
+                "PurchasedPrice": 109.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 219.98,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2023-12-12T14:30:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-02T09:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Le Male",
+                "BrandName": "Jean Paul Gaultier",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 79.99,
+        "UserName": "daniel567",
+        "UserEmail": "daniel.anderson@gmail.com",
+        "DatePurchased": "2023-12-17T11:45:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-10T10:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "One Million",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 179.98,
+        "UserName": "sarah678",
+        "UserEmail": "sarah.wilson@gmail.com",
+        "DatePurchased": "2023-12-20T09:30:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 3
+            }
+        ],
+        "TotalSpent": 179.97,
+        "UserName": "samantha3456",
+        "UserEmail": "samantha.morris@outlook.com",
+        "DatePurchased": "2023-12-25T12:00:00Z",
+        "LastFourOfCard": 6789,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-15T08:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.98,
+        "UserName": "emily012",
+        "UserEmail": "emily.brown@gmail.com",
+        "DatePurchased": "2024-01-05T10:00:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "jessica890",
+        "UserEmail": "jessica.thomas@hotmail.com",
+        "DatePurchased": "2024-01-10T12:30:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "J'adore",
+                "BrandName": "Dior",
+                "PurchasedPrice": 119.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 209.98,
+        "UserName": "john123",
+        "UserEmail": "john.doe@gmail.com",
+        "DatePurchased": "2024-01-15T14:00:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-15T15:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bloom",
+                "BrandName": "Gucci",
+                "PurchasedPrice": 104.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 209.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2024-01-20T11:45:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.99,
+        "UserName": "joseph2345",
+        "UserEmail": "joseph.baker@gmail.com",
+        "DatePurchased": "2024-01-25T10:30:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Refunded",
+        "RefundedDate": "2024-01-25T12:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Le Male",
+                "BrandName": "Jean Paul Gaultier",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.98,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2024-02-27T13:30:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T10:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 79.99,
+        "UserName": "daniel567",
+        "UserEmail": "daniel.anderson@gmail.com",
+        "DatePurchased": "2024-02-27T14:45:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "J'adore",
+                "BrandName": "Dior",
+                "PurchasedPrice": 119.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 119.99,
+        "UserName": "michael789",
+        "UserEmail": "michael.johnson@yahoo.com",
+        "DatePurchased": "2024-02-27T16:00:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T12:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 119.98,
+        "UserName": "sarah678",
+        "UserEmail": "sarah.wilson@gmail.com",
+        "DatePurchased": "2024-02-27T17:15:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.99,
+        "UserName": "jacob4567",
+        "UserEmail": "jacob.green@outlook.com",
+        "DatePurchased": "2024-02-27T18:30:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T14:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Coco Mademoiselle",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 99.99,
+        "UserName": "james901",
+        "UserEmail": "james.taylor@outlook.com",
+        "DatePurchased": "2024-02-27T10:45:00Z",
+        "LastFourOfCard": 6789,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Nuit de L'Homme",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Invictus",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 169.98,
+        "UserName": "david345",
+        "UserEmail": "david.davis@hotmail.com",
+        "DatePurchased": "2024-02-27T12:00:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T11:15:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Armani Code",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2024-02-27T14:30:00Z",
+        "LastFourOfCard": 8901,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 89.99,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2024-02-27T16:15:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bleu de Chanel",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 199.98,
+        "UserName": "matthew9012",
+        "UserEmail": "matthew.clark@yahoo.com",
+        "DatePurchased": "2024-02-27T18:00:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T13:45:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 229.98,
+        "UserName": "jessica890",
+        "UserEmail": "jessica.thomas@hotmail.com",
+        "DatePurchased": "2024-02-21T11:30:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Good Girl",
+                "BrandName": "Carolina Herrera",
+                "PurchasedPrice": 129.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 129.99,
+        "UserName": "john123",
+        "UserEmail": "john.doe@gmail.com",
+        "DatePurchased": "2024-02-22T14:00:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-27T09:45:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 139.98,
+        "UserName": "emily012",
+        "UserEmail": "emily.brown@gmail.com",
+        "DatePurchased": "2024-02-23T12:15:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bloom",
+                "BrandName": "Gucci",
+                "PurchasedPrice": 104.99,
+                "Amount": 1
+            },
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 184.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2024-02-24T15:30:00Z",
+        "LastFourOfCard": 6789,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-27T14:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 2
+            }
+        ],
+        "TotalSpent": 179.98,
+        "UserName": "david345",
+        "UserEmail": "david.davis@hotmail.com",
+        "DatePurchased": "2024-02-25T17:45:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bleu de Chanel",
+                "BrandName": "Chanel",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Light Blue",
+                "BrandName": "Dolce & Gabbana",
+                "PurchasedPrice": 69.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 169.98,
+        "UserName": "sarah678",
+        "UserEmail": "sarah.wilson@gmail.com",
+        "DatePurchased": "2024-02-15T10:30:00Z",
+        "LastFourOfCard": 9012,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-27T09:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Orchid",
+                "BrandName": "Tom Ford",
+                "PurchasedPrice": 149.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 149.99,
+        "UserName": "jennifer8901",
+        "UserEmail": "jennifer.adams@yahoo.com",
+        "DatePurchased": "2024-02-17T12:45:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "La Nuit de L'Homme",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 79.99,
+        "UserName": "jane456",
+        "UserEmail": "jane.smith@outlook.com",
+        "DatePurchased": "2024-02-20T14:00:00Z",
+        "LastFourOfCard": 4567,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T10:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Armani Code",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 99.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 159.98,
+        "UserName": "daniel567",
+        "UserEmail": "daniel.anderson@gmail.com",
+        "DatePurchased": "2024-02-22T16:30:00Z",
+        "LastFourOfCard": 5678,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            },
+            {
+                "Name": "One Million",
+                "BrandName": "Paco Rabanne",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 179.98,
+        "UserName": "michael789",
+        "UserEmail": "michael.johnson@yahoo.com",
+        "DatePurchased": "2024-02-25T18:15:00Z",
+        "LastFourOfCard": 6789,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T14:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Chloe",
+                "BrandName": "Chloe",
+                "PurchasedPrice": 109.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 109.99,
+        "UserName": "amanda3456",
+        "UserEmail": "amanda.walker@gmail.com",
+        "DatePurchased": "2024-02-19T11:30:00Z",
+        "LastFourOfCard": 7890,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T11:00:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bloom",
+                "BrandName": "Gucci",
+                "PurchasedPrice": 104.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 164.98,
+        "UserName": "jessica890",
+        "UserEmail": "jessica.thomas@hotmail.com",
+        "DatePurchased": "2024-02-20T13:45:00Z",
+        "LastFourOfCard": 8901,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Bright Crystal",
+                "BrandName": "Versace",
+                "PurchasedPrice": 52.17,
+                "Amount": 1
+            },
+            {
+                "Name": "Black Opium",
+                "BrandName": "Yves Saint Laurent",
+                "PurchasedPrice": 89.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 142.16,
+        "UserName": "william1234",
+        "UserEmail": "william.white@gmail.com",
+        "DatePurchased": "2024-02-21T14:15:00Z",
+        "LastFourOfCard": 1234,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T12:30:00Z"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "J'adore",
+                "BrandName": "Dior",
+                "PurchasedPrice": 119.99,
+                "Amount": 1
+            },
+            {
+                "Name": "La Vie Est Belle",
+                "BrandName": "Lancôme",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 199.98,
+        "UserName": "megan5678",
+        "UserEmail": "megan.king@hotmail.com",
+        "DatePurchased": "2024-02-22T16:30:00Z",
+        "LastFourOfCard": 2345,
+        "Status": "Paid",
+        "RefundedDate": "0001-01-01T00:00:00"
+    },
+    {
+        "ProductsPurchased": [
+            {
+                "Name": "Acqua di Gio",
+                "BrandName": "Giorgio Armani",
+                "PurchasedPrice": 79.99,
+                "Amount": 1
+            },
+            {
+                "Name": "Daisy",
+                "BrandName": "Marc Jacobs",
+                "PurchasedPrice": 59.99,
+                "Amount": 1
+            }
+        ],
+        "TotalSpent": 139.98,
+        "UserName": "john123",
+        "UserEmail": "john.doe@gmail.com",
+        "DatePurchased": "2024-02-23T17:00:00Z",
+        "LastFourOfCard": 3456,
+        "Status": "Refunded",
+        "RefundedDate": "2024-02-28T14:45:00Z"
+    }
+]

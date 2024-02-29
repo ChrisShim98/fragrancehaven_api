@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ProductSeedData.json"
     },
     {
+      "Id": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\TransactionSeedData.json",
+      "PackagePath": "staticwebassets\\TransactionSeedData.json"
+    },
+    {
       "Id": "C:\\Users\\Chris\\Desktop\\fragrancehaven_api\\wwwroot\\UserSeedData.json",
       "PackagePath": "staticwebassets\\UserSeedData.json"
     },

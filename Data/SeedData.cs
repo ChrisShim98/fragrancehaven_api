@@ -63,5 +63,21 @@ namespace api.Data
                 _dataContext.SaveChanges();
             };
         }
+        public static async Task SeedTransactions(UserManager<AppUser> userManager, DataContext _dataContext)
+        {
+            if (_dataContext.Transactions.Any()) return;
+
+            var transactionData = await File.ReadAllTextAsync("wwwroot/TransactionSeedData.json");
+
+            var transactions = JsonSerializer.Deserialize<List<Transaction>>(transactionData);
+
+            foreach (var transaction in transactions)
+            {
+                transaction.User = await userManager.Users.SingleOrDefaultAsync(u => u.UserName == transaction.UserName);
+                transaction.UserId = transaction.UserId;
+                _dataContext.Transactions.AddRange(transaction);
+                _dataContext.SaveChanges();
+            };
+        }
     }
 }

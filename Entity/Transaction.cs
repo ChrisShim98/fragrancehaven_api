@@ -9,10 +9,14 @@ namespace fragrancehaven_api.Entity
         public List<PurchasedProduct> ProductsPurchased { get; set; }
         public float TotalSpent { get; set; }
         public int UserId { get; set; }
+        
         [JsonIgnore]
         public AppUser User { get; set; }
+        public string UserName { get; set; }
+        public string UserEmail { get; set; }
         public DateTime DatePurchased { get; set; } = DateTime.UtcNow;
         public int LastFourOfCard { get; set; }
         public string Status { get; set; } = "Paid";
+        public DateTime RefundedDate { get; set; }
     }
 }

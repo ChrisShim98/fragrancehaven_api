@@ -1,6 +1,7 @@
 using api.Data;
 using api.Helpers;
 using AutoMapper;
+using fragrancehaven_api.DTOs;
 using fragrancehaven_api.Entity;
 using fragrancehaven_api.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,15 @@ namespace fragrancehaven_api.Data
                 query.Include(t => t.ProductsPurchased).Include(t => t.User).AsNoTracking(),
                 paginationParams.PageNumber,
                 paginationParams.PageSize);
+        }
+
+        public async Task<List<Transaction>> FindAllTransactionsAnalyticsAsync(DateFilter dateFilter, bool refunded)
+        {
+            var query = refunded 
+                ? _context.Transactions.Where(t => t.RefundedDate >= dateFilter.StartDate && t.RefundedDate <= dateFilter.EndDate).Include(t => t.ProductsPurchased).Include(t => t.User).AsNoTracking()
+                : _context.Transactions.Where(t => t.DatePurchased >= dateFilter.StartDate && t.DatePurchased <= dateFilter.EndDate).Include(t => t.ProductsPurchased).Include(t => t.User).AsNoTracking();
+
+            return await query.ToListAsync();
         }
 
         public async Task<PagedList<Transaction>> FindAllTransactionsForUserAsync(string username, PaginationParams paginationParams)

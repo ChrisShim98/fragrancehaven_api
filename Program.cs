@@ -63,6 +63,7 @@ try
     var _context = services.GetRequiredService<DataContext>();
     await SeedData.SeedUsers(userManager, roleManager);
     await SeedData.SeedProducts(_context);
+    await SeedData.SeedTransactions(userManager, _context);
 }
 catch (Exception ex)
 {

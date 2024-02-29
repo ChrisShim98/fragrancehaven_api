@@ -37,12 +37,18 @@ namespace fragrancehaven_api.Controllers
             Response.AddPaginationHeader(new PaginationHeader(transactions.CurrentPage,
                 transactions.PageSize, transactions.TotalCount, transactions.TotalPages));
 
+            foreach (var transaction in transactions)
+            {
+                // Set the UserName and UserEmail properties from the related AppUser object
+                transaction.UserName = transaction.User?.UserName;
+                transaction.UserEmail = transaction.User?.Email;
+            }
             return Ok(transactions);
         }
 
         [Authorize(Policy = "RequireAccount")]
         [HttpGet("{username}")] // GET: api/transaction/{username}
-        public async Task<ActionResult<PagedList<Transaction>>> GetForUserTransactions(string username, [FromQuery] PaginationParams paginationParams)
+        public async Task<ActionResult<PagedList<Transaction>>> GetUserTransactions(string username, [FromQuery] PaginationParams paginationParams)
         {
             AppUser user = await _userManager.Users.SingleOrDefaultAsync(u => u.UserName == username.ToLower());
             if (user == null)
@@ -87,7 +93,8 @@ namespace fragrancehaven_api.Controllers
                 productFound.Stock -= product.Amount;
                 _uow.productRepository.EditProduct(productFound, null);
 
-                foundProducts.Add(new PurchasedProduct {
+                foundProducts.Add(new PurchasedProduct
+                {
                     Name = productFound.Name,
                     BrandName = productFound.Brand.Name,
                     PurchasedPrice = productFound.SalePrice > 0 ? productFound.SalePrice : productFound.Price,
@@ -96,7 +103,7 @@ namespace fragrancehaven_api.Controllers
             }
             transaction.ProductsPurchased.Clear();
             transaction.ProductsPurchased.AddRange(foundProducts);
-            
+
             // Map foreign keys
             transaction.User = user;
             transaction.UserId = user.Id;
@@ -109,6 +116,23 @@ namespace fragrancehaven_api.Controllers
                 return Ok(transaction);
 
             return BadRequest("Problem adding transaction");
+        }
+
+        [Authorize(Policy = "RequireAdminRole")]
+        [HttpPut("{transactionId}")] // PUT: api/transaction/{transactionId}
+        public async Task<ActionResult<string>> PutRefundTransactions(int transactionId)
+        {
+            Transaction transactionToRefund  = await _uow.transactionRepository.FindTransactionById(transactionId);
+            if (transactionToRefund == null)
+                return NotFound("Transaction was not found");
+
+            transactionToRefund.Status = "Refunded";
+            transactionToRefund.RefundedDate = DateTime.UtcNow;
+
+            if (await _uow.Complete())
+                return Ok("Transaction Refunded");
+
+            return BadRequest("Problem refunding transaction");            
         }
     }
 }
