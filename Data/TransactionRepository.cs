@@ -29,11 +29,11 @@ namespace fragrancehaven_api.Data
 
             if (!string.IsNullOrEmpty(paginationParams.SearchQuery))
             {
-                query = query.Where(t => t.User.UserName.ToLower().Contains(paginationParams.SearchQuery));
+                query = query.Where(t => t.UserName.ToLower().Contains(paginationParams.SearchQuery) || t.Id.ToString().Contains(paginationParams.SearchQuery));
             }
 
             return await PagedList<Transaction>.CreateAsync(
-                query.Include(t => t.ProductsPurchased).Include(t => t.User).AsNoTracking(),
+                query.Include(t => t.ProductsPurchased).Include(t => t.User).OrderByDescending(t => t.DatePurchased.Date).AsNoTracking(),
                 paginationParams.PageNumber,
                 paginationParams.PageSize);
         }
@@ -54,7 +54,7 @@ namespace fragrancehaven_api.Data
             query = query.Where(t => t.User.UserName.ToLower() == username.ToLower());
 
             return await PagedList<Transaction>.CreateAsync(
-                query.Include(t => t.ProductsPurchased).AsNoTracking(),
+                query.Include(t => t.ProductsPurchased).OrderByDescending(t => t.DatePurchased.Date).AsNoTracking(),
                 paginationParams.PageNumber,
                 paginationParams.PageSize);
         }
