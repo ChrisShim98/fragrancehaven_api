@@ -13,7 +13,7 @@ namespace fragrancehaven_api.DTOs
             {
                 case "today":
                     StartDate = DateTime.Now.Date;
-                    EndDate = DateTime.Now;
+                    EndDate = DateTime.Now.AddTicks(-1);
                     break;
                 case "yesterday":
                     StartDate = DateTime.Now.Date.AddDays(-1);
@@ -21,25 +21,25 @@ namespace fragrancehaven_api.DTOs
                     break;
                 case "thelastsevendays":
                     StartDate = DateTime.Now.Date.AddDays(-6);
-                    EndDate = DateTime.Now;
+                    EndDate = DateTime.Now.AddDays(1).AddTicks(-1);
                     break;
                 case "thelastfourweeks":
                     DateTime today = DateTime.Now.Date;
                     DateTime lastSaturday = today.AddDays(-(int)today.DayOfWeek);
                     StartDate = lastSaturday.AddDays(-27);
-                    EndDate = today;
+                    EndDate = today.AddDays(1).AddTicks(-1);
                     break;
                 case "thelastthreemonths":
                     StartDate = DateTime.Now.Date.AddMonths(-3);
-                    EndDate = DateTime.Now;
+                    EndDate = DateTime.Now.AddDays(1).AddTicks(-1);
                     break;
                 case "thelastsixmonths":
                     StartDate = DateTime.Now.Date.AddMonths(-6);
-                    EndDate = DateTime.Now;
+                    EndDate = DateTime.Now.AddDays(1).AddTicks(-1);
                     break;
                 case "thelasttwelvemonths":
                     StartDate = DateTime.Now.Date.AddMonths(-12);
-                    EndDate = DateTime.Now;
+                    EndDate = DateTime.Now.AddDays(1).AddTicks(-1);
                     break;
                 case "custom":
                     // Custom period, do nothing as StartDate and EndDate will be set separately

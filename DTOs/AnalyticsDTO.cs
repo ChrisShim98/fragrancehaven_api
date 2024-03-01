@@ -92,23 +92,43 @@ namespace fragrancehaven_api.DTOs
                     else if (duration <= TimeSpan.FromDays(30))
                     {
                         // If duration is greater than 7 days but less than or equal to 30 days, display as weeks
-                        DateTime endDate = dateFilter.EndDate;
-                        for (DateTime startDate = endDate; startDate <= dateFilter.EndDate; startDate = startDate.AddDays(7))
+
+                        // Start the loop from the start date and move forward in time by weeks
+                        for (DateTime startDate = dateFilter.StartDate; startDate <= dateFilter.EndDate; startDate = startDate.AddDays(7))
                         {
-                            DateTime startOfWeek = startDate.AddDays(-6);
+                            // Adjust the end of the week to be Saturday
+                            DateTime endOfWeek = startDate.AddDays(6 - (int)startDate.DayOfWeek); // Saturday is DayOfWeek.Saturday == 6
+
+                            // Ensure that the end of the week is within the specified period
+                            if (endOfWeek > dateFilter.EndDate)
+                            {
+                                endOfWeek = dateFilter.EndDate;
+                            }
+
                             // Ensure that the start of the week is within the specified period
+                            DateTime startOfWeek = endOfWeek.AddDays(-6); // Start of the week is Sunday
                             if (startOfWeek < dateFilter.StartDate)
                             {
                                 startOfWeek = dateFilter.StartDate;
                             }
-                            PeriodLabel.Add(startOfWeek.ToString("MMM dd") + " - " + startDate.ToString("MMM dd"));
+
+                            // Add the formatted string representing the week to the list
+                            PeriodLabel.Add(startOfWeek.ToString("MMM dd") + " - " + endOfWeek.ToString("MMM dd"));
+
+                            // If the end of the week is not the end date and the loop is not completed, add an additional week
+                            if (endOfWeek < dateFilter.EndDate && startDate.AddDays(7) > dateFilter.EndDate)
+                            {
+                                startOfWeek = endOfWeek.AddDays(1); // Start of the next week
+                                endOfWeek = dateFilter.EndDate; // Set the end date as the end of the next week
+                                PeriodLabel.Add(startOfWeek.ToString("MMM dd") + " - " + endOfWeek.AddDays(-1).AddTicks(-1).ToString("MMM dd"));
+                            }
                         }
                     }
                     else
                     {
                         // If duration is greater than 30 days, display as months
-                        DateTime currentDateHolder = dateFilter.EndDate;
-                        while (currentDateHolder <= dateFilter.EndDate)
+                        DateTime currentDateHolder = dateFilter.StartDate.Date;
+                        while (currentDateHolder <= dateFilter.EndDate.ToLocalTime())
                         {
                             PeriodLabel.Add(currentDateHolder.ToString("MMMM"));
                             currentDateHolder = currentDateHolder.AddMonths(1);

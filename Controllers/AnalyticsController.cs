@@ -221,7 +221,7 @@ namespace fragrancehaven_api.Controllers
 
                         float sortedTransactionsGainTotal = sortedTransactions.Sum(t => t.TotalSpent);
                         float sortedTransactionsLossTotal = sortedRefundedTransactions.Sum(t => t.TotalSpent);
-                        
+
                         int sortUnitsSoldTotal = sortedTransactions
                             .SelectMany(transaction => transaction.ProductsPurchased)
                             .Sum(unit => unit.Amount);
@@ -309,24 +309,25 @@ namespace fragrancehaven_api.Controllers
                     }
                     else if (duration <= TimeSpan.FromDays(30))
                     {
-                        // If duration is greater than 7 days but less than or equal to 30 days, display as weeks
                         DateTime endDate = dateFilter.EndDate;
-                        for (DateTime startDate = endDate; startDate <= dateFilter.EndDate; startDate = startDate.AddDays(7))
+                        DateTime startDate = dateFilter.StartDate;
+
+                        while (startDate <= endDate)
                         {
-                            DateTime startOfWeek = startDate.AddDays(-6);
-                            // Ensure that the start of the week is within the specified period
-                            if (startOfWeek < dateFilter.StartDate)
+                            DateTime endOfWeek = startDate.AddDays(6 - (int)startDate.DayOfWeek); // Saturday is DayOfWeek.Saturday == 6
+
+                            if (endOfWeek > endDate)
                             {
-                                startOfWeek = dateFilter.StartDate;
-                            }
-                            DateTime endOfWeek = startDate;
-                            // Ensure that the end of the week is within the specified period
-                            if (endOfWeek > dateFilter.EndDate)
-                            {
-                                endOfWeek = dateFilter.EndDate;
+                                endOfWeek = endDate;
                             }
 
-                            // Filter transactions for the current week
+                            DateTime startOfWeek = endOfWeek.AddDays(-6); // Start of the week is Sunday
+
+                            if (startOfWeek < startDate)
+                            {
+                                startOfWeek = startDate;
+                            }
+
                             List<Transaction> sortedTransactions = transactions
                                 .Where(t => t.DatePurchased.Date >= startOfWeek.Date && t.DatePurchased.Date <= endOfWeek.Date)
                                 .ToList();
@@ -337,26 +338,45 @@ namespace fragrancehaven_api.Controllers
 
                             float sortedTransactionsGainTotal = sortedTransactions.Sum(t => t.TotalSpent);
                             float sortedTransactionsLossTotal = sortedRefundedTransactions.Sum(t => t.TotalSpent);
-
-                            int sortUnitsSoldTotal = sortedTransactions
-                                .SelectMany(transaction => transaction.ProductsPurchased)
-                                .Sum(unit => unit.Amount);
-
-                            int amountOfUnitsRefunded = sortedRefundedTransactions
-                                .Where(t => t.Status == "Refunded")
-                                .SelectMany(t => t.ProductsPurchased)
-                                .Sum(tPP => tPP.Amount);
+                            int sortUnitsSoldTotal = sortedTransactions.SelectMany(transaction => transaction.ProductsPurchased).Sum(unit => unit.Amount);
+                            int amountOfUnitsRefunded = sortedRefundedTransactions.Where(t => t.Status == "Refunded").SelectMany(t => t.ProductsPurchased).Sum(tPP => tPP.Amount);
 
                             revenueGainPerPeriod.Add(sortedTransactionsGainTotal);
                             revenueLossPerPeriod.Add(sortedTransactionsLossTotal);
                             totalUnitsSoldPerPeriod.Add(sortUnitsSoldTotal);
                             unitsRefundedAmountPerPeriod.Add(amountOfUnitsRefunded);
+
+                            if (endOfWeek < endDate && startDate.AddDays(7) > endDate)
+                            {
+                                startOfWeek = endOfWeek.AddDays(1); // Start of the next week
+                                endOfWeek = endDate; // Set the end date as the end of the next week
+
+                                sortedTransactions = transactions
+                                    .Where(t => t.DatePurchased.Date >= startOfWeek.Date && t.DatePurchased.Date <= endOfWeek.Date)
+                                    .ToList();
+
+                                sortedRefundedTransactions = refundedTransactions
+                                    .Where(t => t.RefundedDate.Date >= startOfWeek.Date && t.RefundedDate.Date <= endOfWeek.Date)
+                                    .ToList();
+
+                                sortedTransactionsGainTotal = sortedTransactions.Sum(t => t.TotalSpent);
+                                sortedTransactionsLossTotal = sortedRefundedTransactions.Sum(t => t.TotalSpent);
+                                sortUnitsSoldTotal = sortedTransactions.SelectMany(transaction => transaction.ProductsPurchased).Sum(unit => unit.Amount);
+                                amountOfUnitsRefunded = sortedRefundedTransactions.Where(t => t.Status == "Refunded").SelectMany(t => t.ProductsPurchased).Sum(tPP => tPP.Amount);
+
+                                revenueGainPerPeriod.Add(sortedTransactionsGainTotal);
+                                revenueLossPerPeriod.Add(sortedTransactionsLossTotal);
+                                totalUnitsSoldPerPeriod.Add(sortUnitsSoldTotal);
+                                unitsRefundedAmountPerPeriod.Add(amountOfUnitsRefunded);
+                            }
+
+                            startDate = endOfWeek.AddDays(1);
                         }
                     }
                     else
                     {
                         // If duration is greater than 30 days, display as months
-                        DateTime currentDateHolder = dateFilter.EndDate;
+                        DateTime currentDateHolder = dateFilter.StartDate.Date;
                         while (currentDateHolder <= dateFilter.EndDate)
                         {
                             // Filter transactions for the current month
