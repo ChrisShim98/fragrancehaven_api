@@ -8,4 +8,4 @@ Visit the [live demo](https://fragrancehaven.vercel.app/) to explore the applica
 
 **Testers can either register for a new account or click on Admin Test or User Test button on the sign in page**
 
-This is the respository for the backend and the repository for the frontend and details on this application can be found here: [Fragrance Haven](https://github.com/ChrisShim98/fragrancehaveni)
+This is the respository for the backend and the repository for the frontend and details on this application can be found here: [Fragrance Haven](https://github.com/ChrisShim98/fragrancehaven)
